@@ -44,6 +44,13 @@ variables.css → reset.css → base.css → animations.css → navbar.css → h
 - Image data format: `{ src, thumb, alt, category, caption }`
 - Lightbox: open via `openLightbox(index)`, keyboard nav (←/→/Esc), touch swipe
 
+## Code Formatter
+- Tool: **Prettier 3.8.1** via `npx prettier`
+- Config: `.prettierrc` at repo root (printWidth 120, tabWidth 2, LF line endings)
+- Exclusions: `.prettierignore` excludes `.git/`, `.claude/`, `CLAUDE.md`
+- Skill: `.claude/skills/formatter/SKILL.md` — trigger keywords: format, prettier, prettify, reformat, beautify
+- Command: `npx prettier --write "**/*.html" "assets/css/**/*.css" "assets/js/**/*.js"`
+
 ## Current Status — PRODUCTION SITE BUILT
 All files created. Replace picsum.photos images with real photos before deploy.
 Place hero video at `./assets/video/hero.mp4` (under 15MB).

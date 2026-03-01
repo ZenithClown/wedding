@@ -80,6 +80,21 @@ Design tokens (colors, fonts, spacing) live exclusively in `variables.css`. Neve
 - Wedding date: `15 · 12 · 2025`
 - Copyright: `© 2025 Debmalya Pramanik & Ankita Santra`
 
+## Code Formatting
+
+All source files are formatted with **Prettier** (v3.8.1). Config lives in `.prettierrc`; exclusions in `.prettierignore`.
+
+```bash
+# Format all HTML, CSS, and JS files
+npx prettier --write "**/*.html" "assets/css/**/*.css" "assets/js/**/*.js"
+
+# Check without writing (CI / dry-run)
+npx prettier --check "**/*.html" "assets/css/**/*.css" "assets/js/**/*.js"
+```
+
+Key settings: `printWidth: 120` · `tabWidth: 2` · `singleQuote: false` · `endOfLine: "lf"`.
+The `formatter` skill at `.claude/skills/formatter/SKILL.md` documents the full workflow.
+
 ## Before Production Deploy
 
 1. Replace all `picsum.photos` placeholder `src` values in `gallery.js`, `prewedding.html`, and `collages.html` with real image paths.
