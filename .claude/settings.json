@@ -11,6 +11,15 @@
           "new page", "add feature"
         ],
         "always_load": false
+      },
+      {
+        "name": "formatter",
+        "description": "Formats HTML, CSS, and JS files using Prettier. Use when asked to format, prettify, lint-fix, or tidy source files.",
+        "skill_path": ".claude/skills/formatter/SKILL.md",
+        "trigger_keywords": [
+          "format", "prettier", "prettify", "lint-fix", "tidy", "style", "reformat", "beautify"
+        ],
+        "always_load": false
       }
     ]
   }
