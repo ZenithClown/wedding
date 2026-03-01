@@ -1,0 +1,208 @@
+/* ============================================================
+   FOOTER — Site footer with couple branding
+   ============================================================ */
+
+.footer {
+  background: var(--color-bg-alt);
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-20);
+  padding-bottom: var(--space-8);
+}
+
+.footer__top {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: var(--space-12);
+  align-items: start;
+  padding-bottom: var(--space-16);
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* --- Brand column (center) --- */
+.footer__brand {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.footer__monogram {
+  font-family: var(--font-serif);
+  font-size: 3.5rem;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--color-gold);
+  line-height: 1;
+}
+
+.footer__couple-name {
+  font-family: var(--font-serif);
+  font-size: var(--text-xl);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--color-text);
+  line-height: 1.2;
+}
+
+.footer__date {
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-super);
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+.footer__quote {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  max-width: 24ch;
+  text-align: center;
+  line-height: var(--leading-loose);
+}
+
+/* --- Left: Nav links --- */
+.footer__nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding-top: var(--space-4);
+}
+
+.footer__nav-label {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  letter-spacing: var(--tracking-super);
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: var(--space-2);
+}
+
+.footer__nav-link {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+.footer__nav-link:hover {
+  color: var(--color-text);
+}
+
+/* --- Right: Social links --- */
+.footer__social {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--space-4);
+  padding-top: var(--space-4);
+}
+
+.footer__social-label {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  letter-spacing: var(--tracking-super);
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+.footer__social-links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  align-items: flex-end;
+}
+
+.footer__social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+.footer__social-link:hover {
+  color: var(--color-gold);
+}
+
+.footer__social-icon {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+/* --- Bottom bar --- */
+.footer__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--space-8);
+  gap: var(--space-4);
+}
+
+.footer__copy {
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+}
+
+.footer__bottom-links {
+  display: flex;
+  gap: var(--space-6);
+}
+
+.footer__bottom-link {
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+.footer__bottom-link:hover {
+  color: var(--color-gold);
+}
+
+/* --- Gold divider above footer --- */
+.footer-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--color-gold) 30%, var(--color-gold) 70%, transparent);
+  opacity: 0.4;
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .footer__top {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer__nav {
+    align-items: center;
+    order: 2;
+  }
+
+  .footer__brand {
+    order: 1;
+  }
+
+  .footer__social {
+    align-items: center;
+    order: 3;
+  }
+
+  .footer__social-links {
+    align-items: center;
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}

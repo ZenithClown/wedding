@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>Debmalya & Ankita — A Wedding Story</title>
+  <meta name="description" content="The wedding story of Debmalya Pramanik and Ankita Santra. A celebration of love, beautifully captured through photographs and films.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="./index.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website">
+  <meta property="og:title"       content="Debmalya & Ankita — A Wedding Story">
+  <meta property="og:description" content="A celebration of love, beautifully captured.">
+  <meta property="og:image"       content="./assets/images/og-image.jpg">
+  <meta property="og:url"         content="./index.html">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Debmalya & Ankita — A Wedding Story">
+  <meta name="twitter:description" content="A celebration of love, beautifully captured.">
+  <meta name="twitter:image"       content="./assets/images/og-image.jpg">
+
+  <!-- Preconnect for Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="./assets/css/variables.css">
+  <link rel="stylesheet" href="./assets/css/reset.css">
+  <link rel="stylesheet" href="./assets/css/base.css">
+  <link rel="stylesheet" href="./assets/css/animations.css">
+  <link rel="stylesheet" href="./assets/css/navbar.css">
+  <link rel="stylesheet" href="./assets/css/hero.css">
+  <link rel="stylesheet" href="./assets/css/gallery.css">
+  <link rel="stylesheet" href="./assets/css/films.css">
+  <link rel="stylesheet" href="./assets/css/footer.css">
+
+  <!-- Favicon (replace with real favicon) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💍</text></svg>">
+</head>
+<body>
+
+<!-- ============================================================
+     NAVBAR
+     ============================================================ -->
+<header class="navbar" role="banner">
+  <div class="navbar__inner">
+    <a href="./index.html" class="navbar__logo" aria-label="Debmalya and Ankita — Home">
+      <span class="navbar__logo-main">Debmalya &amp; Ankita</span>
+      <span class="navbar__logo-sub">Forever &amp; Always</span>
+    </a>
+    <nav class="navbar__nav" role="navigation" aria-label="Primary navigation">
+      <a href="./index.html"           class="navbar__link">Home</a>
+      <a href="./wedding-stories.html" class="navbar__link">Wedding Stories</a>
+      <a href="./wedding-films.html"   class="navbar__link">Wedding Films</a>
+      <a href="./couple-shoot.html"    class="navbar__link">Pre-Wedding</a>
+    </nav>
+    <button class="navbar__hamburger" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-drawer">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile Drawer -->
+<div class="nav-drawer" id="nav-drawer" role="dialog" aria-modal="true" aria-label="Navigation">
+  <div class="nav-drawer__overlay"></div>
+  <nav class="nav-drawer__panel">
+    <a href="./index.html"           class="nav-drawer__link">Home</a>
+    <a href="./wedding-stories.html" class="nav-drawer__link">Wedding Stories</a>
+    <a href="./wedding-films.html"   class="nav-drawer__link">Wedding Films</a>
+    <a href="./couple-shoot.html"    class="nav-drawer__link">Pre-Wedding</a>
+    <p class="nav-drawer__footer">Debmalya &amp; Ankita · 2025</p>
+  </nav>
+</div>
+
+<!-- ============================================================
+     HERO — Video Landing
+     ============================================================ -->
+<main id="main-content">
+<section class="hero" aria-label="Hero">
+  <div class="hero__video-wrap" aria-hidden="true">
+    <!-- Poster image shown until video plays -->
+    <img
+      class="hero__poster"
+      src="https://picsum.photos/seed/herowed/1920/1080"
+      alt=""
+      fetchpriority="high"
+    >
+    <video
+      class="hero__video"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="metadata"
+      poster="https://picsum.photos/seed/herowed/1920/1080"
+      aria-hidden="true"
+    >
+      <source src="./assets/video/hero.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="hero__overlay" aria-hidden="true"></div>
+
+  <div class="hero__content">
+    <span class="hero__eyebrow">A Love Story</span>
+    <span class="hero__names">
+      <span class="hero__underline-wrap">
+        Debmalya
+        <svg class="hero__underline-svg" viewBox="0 0 220 12" preserveAspectRatio="none" aria-hidden="true">
+          <path class="hero__underline-path" d="M2,9 C40,3 80,11 110,6 C140,1 180,9 218,5"/>
+        </svg>
+      </span>
+      &amp; <span>Ankita</span>
+    </span>
+    <span class="hero__tagline">A Story of Love &amp; Togetherness</span>
+    <span class="hero__date">15 · 12 · 2025</span>
+    <div class="hero__cta-wrap">
+      <a href="./wedding-stories.html" class="btn btn--outline">View Photos</a>
+      <a href="./wedding-films.html"   class="btn btn--ghost">Watch Films</a>
+    </div>
+  </div>
+
+  <button class="hero__scroll" aria-label="Scroll down">
+    <span class="hero__scroll-text">Scroll</span>
+    <svg class="hero__scroll-icon" viewBox="0 0 24 24" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+    </svg>
+  </button>
+</section>
+
+<!-- ============================================================
+     QUOTE / TAGLINE
+     ============================================================ -->
+<section class="quote-section section" aria-label="Quote">
+  <div class="container">
+    <div class="reveal">
+      <p class="quote-section__text">
+        <span class="quote-section__mark quote-section__mark--open">&ldquo;</span>
+        Two souls, one journey — a love written in the stars
+        and sealed with forever.
+        <span class="quote-section__mark quote-section__mark--close">&rdquo;</span>
+      </p>
+      <span class="quote-section__attribution">Debmalya &amp; Ankita · December 2025</span>
+    </div>
+
+    <div class="gold-divider reveal" style="margin-top: 3rem;">
+      <span class="gold-divider--text">♦</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     GALLERY PREVIEW
+     ============================================================ -->
+<section class="gallery-preview section section--alt" aria-labelledby="gallery-preview-title">
+  <div class="container">
+    <header class="section-header stagger">
+      <span class="section-label reveal">Wedding Stories</span>
+      <h2 class="section-title reveal" id="gallery-preview-title">
+        Moments <em>Captured</em>
+      </h2>
+      <p class="section-subtitle reveal">
+        Every frame holds a feeling — the laughter, the tears, the stolen glances.
+        A curated look at our most treasured wedding day memories.
+      </p>
+    </header>
+
+    <div class="gallery-preview__grid stagger">
+      <!-- 6 preview images — categories match gallery page filters -->
+      <div class="gallery-grid__item reveal" data-category="ceremony" tabindex="0" role="button" aria-label="View ceremony photo">
+        <img src="https://picsum.photos/seed/prev1/800/600" alt="Wedding ceremony moment" loading="lazy" decoding="async">
+        <div class="gallery-grid__caption"><span class="gallery-grid__caption-text">The Vows</span></div>
+        <div class="gallery-grid__expand" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-5h-4m4 0v4m0-4l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/></svg>
+        </div>
+      </div>
+      <div class="gallery-grid__item reveal" data-category="portraits" tabindex="0" role="button" aria-label="View portrait">
+        <img src="https://picsum.photos/seed/prev2/600/800" alt="Couple portrait" loading="lazy" decoding="async">
+        <div class="gallery-grid__caption"><span class="gallery-grid__caption-text">Golden Hour</span></div>
+        <div class="gallery-grid__expand" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-5h-4m4 0v4m0-4l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/></svg>
+        </div>
+      </div>
+      <div class="gallery-grid__item reveal" data-category="reception" tabindex="0" role="button" aria-label="View reception photo">
+        <img src="https://picsum.photos/seed/prev3/800/600" alt="Wedding reception" loading="lazy" decoding="async">
+        <div class="gallery-grid__caption"><span class="gallery-grid__caption-text">First Dance</span></div>
+        <div class="gallery-grid__expand" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-5h-4m4 0v4m0-4l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/></svg>
+        </div>
+      </div>
+      <div class="gallery-grid__item reveal" data-category="details" tabindex="0" role="button" aria-label="View details photo">
+        <img src="https://picsum.photos/seed/prev4/800/600" alt="Wedding details" loading="lazy" decoding="async">
+        <div class="gallery-grid__caption"><span class="gallery-grid__caption-text">Every Detail</span></div>
+        <div class="gallery-grid__expand" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-5h-4m4 0v4m0-4l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/></svg>
+        </div>
+      </div>
+      <div class="gallery-grid__item reveal" data-category="candid" tabindex="0" role="button" aria-label="View candid photo">
+        <img src="https://picsum.photos/seed/prev5/800/600" alt="Candid moment" loading="lazy" decoding="async">
+        <div class="gallery-grid__caption"><span class="gallery-grid__caption-text">Pure Joy</span></div>
+        <div class="gallery-grid__expand" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-5h-4m4 0v4m0-4l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/></svg>
+        </div>
+      </div>
+      <div class="gallery-grid__item reveal" data-category="portraits" tabindex="0" role="button" aria-label="View portrait">
+        <img src="https://picsum.photos/seed/prev6/600/800" alt="Romantic portrait" loading="lazy" decoding="async">
+        <div class="gallery-grid__caption"><span class="gallery-grid__caption-text">Together</span></div>
+        <div class="gallery-grid__expand" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-5h-4m4 0v4m0-4l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/></svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-12 reveal">
+      <a href="./wedding-stories.html" class="btn btn--outline">See All Photos</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FILMS PREVIEW
+     ============================================================ -->
+<section class="section" aria-labelledby="films-preview-title">
+  <div class="container">
+    <header class="section-header stagger">
+      <span class="section-label reveal">Wedding Films</span>
+      <h2 class="section-title reveal" id="films-preview-title">
+        Stories <em>in Motion</em>
+      </h2>
+      <p class="section-subtitle reveal">
+        Relive the magic through cinematic wedding films — from the nervous anticipation
+        to the joyful celebrations that followed.
+      </p>
+    </header>
+
+    <!-- Featured film -->
+    <div class="film-featured reveal">
+      <div
+        class="film-featured__thumb"
+        data-youtube-id="dQw4w9WgXcQ"
+        data-title="Wedding Highlights Film"
+        role="button"
+        tabindex="0"
+        aria-label="Play Wedding Highlights Film"
+      >
+        <img
+          src="https://picsum.photos/seed/film1/1200/675"
+          alt="Wedding highlights film thumbnail"
+          loading="lazy"
+          decoding="async"
+        >
+        <div class="film-card__play" aria-hidden="true">
+          <div class="film-card__play-icon">
+            <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+        </div>
+        <span class="film-card__duration">4:32</span>
+      </div>
+      <div class="film-featured__info">
+        <span class="film-featured__label">Featured Film</span>
+        <h3 class="film-featured__title">Wedding <em>Highlights</em></h3>
+        <p class="film-featured__desc">
+          A cinematic journey through the most precious moments of our wedding day —
+          the emotions, the laughter, the music, and the love that filled every corner
+          of our celebration.
+        </p>
+        <a href="./wedding-films.html" class="btn btn--outline" style="margin-top: 1rem;">
+          View All Films
+        </a>
+      </div>
+    </div>
+
+    <!-- Films grid (3 previews) -->
+    <div class="films-grid stagger">
+      <div class="film-card reveal">
+        <div
+          class="film-card__thumb"
+          data-youtube-id="dQw4w9WgXcQ"
+          data-title="Ceremony Film"
+          role="button"
+          tabindex="0"
+          aria-label="Play Ceremony Film"
+        >
+          <img src="https://picsum.photos/seed/film2/800/450" alt="Ceremony film thumbnail" loading="lazy" decoding="async">
+          <div class="film-card__play" aria-hidden="true">
+            <div class="film-card__play-icon">
+              <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+            </div>
+          </div>
+          <span class="film-card__duration">12:18</span>
+        </div>
+        <div class="film-card__info">
+          <span class="film-card__tag">Ceremony</span>
+          <h3 class="film-card__title">The <em>Full Ceremony</em></h3>
+          <p class="film-card__desc">Every sacred moment of the ceremony, preserved in full.</p>
+        </div>
+      </div>
+
+      <div class="film-card reveal">
+        <div
+          class="film-card__thumb"
+          data-youtube-id="dQw4w9WgXcQ"
+          data-title="Reception Film"
+          role="button"
+          tabindex="0"
+          aria-label="Play Reception Film"
+        >
+          <img src="https://picsum.photos/seed/film3/800/450" alt="Reception film thumbnail" loading="lazy" decoding="async">
+          <div class="film-card__play" aria-hidden="true">
+            <div class="film-card__play-icon">
+              <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+            </div>
+          </div>
+          <span class="film-card__duration">8:45</span>
+        </div>
+        <div class="film-card__info">
+          <span class="film-card__tag">Reception</span>
+          <h3 class="film-card__title">The <em>Reception</em></h3>
+          <p class="film-card__desc">Dancing, laughter, and love from our unforgettable reception.</p>
+        </div>
+      </div>
+
+      <div class="film-card reveal">
+        <div
+          class="film-card__thumb"
+          data-youtube-id="dQw4w9WgXcQ"
+          data-title="Vows Film"
+          role="button"
+          tabindex="0"
+          aria-label="Play Vows Film"
+        >
+          <img src="https://picsum.photos/seed/film4/800/450" alt="Vows film thumbnail" loading="lazy" decoding="async">
+          <div class="film-card__play" aria-hidden="true">
+            <div class="film-card__play-icon">
+              <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+            </div>
+          </div>
+          <span class="film-card__duration">3:20</span>
+        </div>
+        <div class="film-card__info">
+          <span class="film-card__tag">Vows</span>
+          <h3 class="film-card__title">Our <em>Vows</em></h3>
+          <p class="film-card__desc">The words we promised each other, forever.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-12 reveal">
+      <a href="./wedding-films.html" class="btn btn--outline">Watch All Films</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PRE-WEDDING PREVIEW
+     ============================================================ -->
+<section class="section section--alt" aria-labelledby="prewed-preview-title">
+  <div class="container">
+    <header class="section-header section-header--center stagger">
+      <span class="section-label reveal">Pre-Wedding</span>
+      <h2 class="section-title reveal" id="prewed-preview-title">
+        Before the <em>Big Day</em>
+      </h2>
+      <p class="section-subtitle reveal">
+        Our pre-wedding shoot — stolen moments, candid laughter,
+        and the quiet magic of two people in love.
+      </p>
+    </header>
+
+    <div class="gallery-preview__grid stagger">
+      <div class="gallery-grid__item reveal" tabindex="0" role="button" aria-label="Pre-wedding photo">
+        <img src="https://picsum.photos/seed/couple1/800/600" alt="Couple at the beach" loading="lazy" decoding="async">
+        <div class="gallery-grid__caption"><span class="gallery-grid__caption-text">Beach Sunrise</span></div>
+        <div class="gallery-grid__expand" aria-hidden="true"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-5h-4m4 0v4m0-4l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/></svg></div>
+      </div>
+      <div class="gallery-grid__item reveal" tabindex="0" role="button" aria-label="Pre-wedding photo">
+        <img src="https://picsum.photos/seed/couple2/800/600" alt="Couple in garden" loading="lazy" decoding="async">
+        <div class="gallery-grid__caption"><span class="gallery-grid__caption-text">Garden of Dreams</span></div>
+        <div class="gallery-grid__expand" aria-hidden="true"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-5h-4m4 0v4m0-4l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/></svg></div>
+      </div>
+      <div class="gallery-grid__item reveal" tabindex="0" role="button" aria-label="Pre-wedding photo">
+        <img src="https://picsum.photos/seed/couple3/800/600" alt="Couple portrait" loading="lazy" decoding="async">
+        <div class="gallery-grid__caption"><span class="gallery-grid__caption-text">City Lights</span></div>
+        <div class="gallery-grid__expand" aria-hidden="true"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-5h-4m4 0v4m0-4l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/></svg></div>
+      </div>
+    </div>
+
+    <div class="text-center mt-12 reveal">
+      <a href="./couple-shoot.html" class="btn btn--outline">View Pre-Wedding Gallery</a>
+    </div>
+  </div>
+</section>
+
+</main><!-- /main-content -->
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<div class="footer-divider"></div>
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__top">
+      <!-- Nav links -->
+      <div class="footer__nav">
+        <span class="footer__nav-label">Navigate</span>
+        <a href="./index.html"           class="footer__nav-link">Home</a>
+        <a href="./wedding-stories.html" class="footer__nav-link">Wedding Stories</a>
+        <a href="./wedding-films.html"   class="footer__nav-link">Wedding Films</a>
+        <a href="./couple-shoot.html"    class="footer__nav-link">Pre-Wedding</a>
+      </div>
+
+      <!-- Brand center -->
+      <div class="footer__brand">
+        <span class="footer__monogram" aria-hidden="true">D &amp; A</span>
+        <span class="footer__couple-name">Debmalya &amp; Ankita</span>
+        <span class="footer__date">15 · 12 · 2025</span>
+
+        <div class="gold-divider" style="width:100%; max-width:200px;" aria-hidden="true">
+          <span class="gold-divider--text">♦</span>
+        </div>
+
+        <p class="footer__quote">"Two souls, one forever."</p>
+      </div>
+
+      <!-- Social links -->
+      <div class="footer__social">
+        <span class="footer__social-label">Follow Along</span>
+        <div class="footer__social-links">
+          <a href="#" class="footer__social-link" aria-label="Instagram" rel="noopener">
+            <svg class="footer__social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+            Instagram
+          </a>
+          <a href="#" class="footer__social-link" aria-label="YouTube" rel="noopener">
+            <svg class="footer__social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+            YouTube
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p class="footer__copy">&copy; 2025 Debmalya Pramanik &amp; Ankita Santra. All rights reserved.</p>
+      <nav class="footer__bottom-links" aria-label="Footer secondary navigation">
+        <a href="./index.html" class="footer__bottom-link">Home</a>
+        <a href="./wedding-stories.html" class="footer__bottom-link">Gallery</a>
+        <a href="./wedding-films.html"   class="footer__bottom-link">Films</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<!-- Scroll to top button -->
+<button id="scroll-top" aria-label="Scroll to top">
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/>
+  </svg>
+</button>
+
+<!-- Scripts -->
+<script src="./assets/js/navbar.js"    defer></script>
+<script src="./assets/js/hero.js"      defer></script>
+<script src="./assets/js/films.js"     defer></script>
+<script src="./assets/js/scroll-top.js" defer></script>
+</body>
+</html>

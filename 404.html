@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found — Debmalya &amp; Ankita</title>
+  <meta name="robots" content="noindex, nofollow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./assets/css/variables.css">
+  <link rel="stylesheet" href="./assets/css/reset.css">
+  <link rel="stylesheet" href="./assets/css/base.css">
+  <link rel="stylesheet" href="./assets/css/animations.css">
+  <link rel="stylesheet" href="./assets/css/navbar.css">
+  <link rel="stylesheet" href="./assets/css/footer.css">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💍</text></svg>">
+
+  <style>
+    .error-page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: var(--space-8);
+      background: var(--color-bg);
+    }
+
+    .error-page__code {
+      font-family: var(--font-serif);
+      font-size: clamp(6rem, 18vw, 14rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--color-surface-2);
+      line-height: 1;
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -55%);
+      z-index: 0;
+      user-select: none;
+    }
+
+    .error-page__inner {
+      position: relative;
+      z-index: 1;
+      max-width: 500px;
+    }
+
+    .error-page__eyebrow {
+      font-family: var(--font-sans);
+      font-size: var(--text-xs);
+      letter-spacing: var(--tracking-super);
+      text-transform: uppercase;
+      color: var(--color-gold);
+      display: block;
+      margin-bottom: var(--space-4);
+    }
+
+    .error-page__title {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--color-text);
+      margin-bottom: var(--space-6);
+      line-height: 1.2;
+    }
+
+    .error-page__desc {
+      font-family: var(--font-sans);
+      font-size: var(--text-base);
+      color: var(--color-text-muted);
+      line-height: var(--leading-loose);
+      margin-bottom: var(--space-12);
+    }
+
+    .error-page__links {
+      display: flex;
+      gap: var(--space-4);
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+
+<header class="navbar scrolled" role="banner">
+  <div class="navbar__inner">
+    <a href="./index.html" class="navbar__logo" aria-label="Debmalya and Ankita — Home">
+      <span class="navbar__logo-main">Debmalya &amp; Ankita</span>
+      <span class="navbar__logo-sub">Forever &amp; Always</span>
+    </a>
+    <nav class="navbar__nav" role="navigation" aria-label="Primary navigation">
+      <a href="./index.html"           class="navbar__link">Home</a>
+      <a href="./wedding-stories.html" class="navbar__link">Wedding Stories</a>
+      <a href="./wedding-films.html"   class="navbar__link">Wedding Films</a>
+      <a href="./couple-shoot.html"    class="navbar__link">Pre-Wedding</a>
+    </nav>
+    <button class="navbar__hamburger" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-drawer">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="nav-drawer" id="nav-drawer" role="dialog" aria-modal="true" aria-label="Navigation">
+  <div class="nav-drawer__overlay"></div>
+  <nav class="nav-drawer__panel">
+    <a href="./index.html"           class="nav-drawer__link">Home</a>
+    <a href="./wedding-stories.html" class="nav-drawer__link">Wedding Stories</a>
+    <a href="./wedding-films.html"   class="nav-drawer__link">Wedding Films</a>
+    <a href="./couple-shoot.html"    class="nav-drawer__link">Pre-Wedding</a>
+    <p class="nav-drawer__footer">Debmalya &amp; Ankita · 2025</p>
+  </nav>
+</div>
+
+<main id="main-content">
+  <div class="error-page" role="main">
+    <span class="error-page__code" aria-hidden="true">404</span>
+    <div class="error-page__inner anim-fade-up">
+      <span class="error-page__eyebrow">Oops — Page Not Found</span>
+      <h1 class="error-page__title">This page seems to have wandered off.</h1>
+      <p class="error-page__desc">
+        Like a beautiful memory, this page doesn't quite exist here.
+        Head back to explore our wedding story.
+      </p>
+      <div class="error-page__links">
+        <a href="./index.html"           class="btn btn--gold">Go Home</a>
+        <a href="./wedding-stories.html" class="btn btn--outline">View Gallery</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script src="./assets/js/navbar.js" defer></script>
+</body>
+</html>
