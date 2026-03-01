@@ -296,98 +296,218 @@
     <footer class="footer" role="contentinfo">
       <div class="container">
         <div class="footer__top">
-          <!-- Mini timeline -->
+          <!-- Horizontal event timeline -->
           <div class="footer__timeline">
-            <span class="footer__nav-label">Our Story</span>
-            <div class="footer__timeline-list">
-              <div class="footer__timeline-item">
-                <div class="footer__timeline-marker" aria-hidden="true"></div>
-                <div class="footer__timeline-info">
-                  <span class="footer__timeline-date">15 · 12 · 2025</span>
-                  <span class="footer__timeline-event">Wedding Ceremony</span>
-                  <span class="footer__timeline-venue">Parui Palace, Bauria Howrah</span>
+            <div class="footer__tl-track">
+              <!-- 1: First Meet — icon above, text below -->
+              <div class="footer__tl-item">
+                <div class="footer__tl-upper">
+                  <div class="footer__tl-icon" aria-hidden="true">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div class="footer__tl-mid">
+                  <div class="footer__tl-line"></div>
+                  <div class="footer__tl-dot"></div>
+                  <div class="footer__tl-line"></div>
+                </div>
+                <div class="footer__tl-lower">
+                  <span class="footer__tl-date">20 · 02 · 2022</span>
+                  <span class="footer__tl-label">First Meet</span>
                 </div>
               </div>
-              <div class="footer__timeline-connector" aria-hidden="true"></div>
-              <div class="footer__timeline-item">
-                <div class="footer__timeline-marker" aria-hidden="true"></div>
-                <div class="footer__timeline-info">
-                  <span class="footer__timeline-date">17 · 12 · 2025</span>
-                  <span class="footer__timeline-event">Reception</span>
-                  <span class="footer__timeline-venue">Patul, Kolkata</span>
+
+              <!-- 2: First Date — text above, icon below -->
+              <div class="footer__tl-item">
+                <div class="footer__tl-upper">
+                  <span class="footer__tl-label">First Date</span>
+                  <span class="footer__tl-date">24 · 03 · 2022</span>
+                </div>
+                <div class="footer__tl-mid">
+                  <div class="footer__tl-line"></div>
+                  <div class="footer__tl-dot"></div>
+                  <div class="footer__tl-line"></div>
+                </div>
+                <div class="footer__tl-lower">
+                  <div class="footer__tl-icon" aria-hidden="true">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M8 3 L6 13 Q6 17 9 17 L9 21 M7 21 L11 21" />
+                      <path d="M16 3 L18 13 Q18 17 15 17 L15 21 M13 21 L17 21" />
+                      <path d="M9 5 L15 5" />
+                      <circle cx="16" cy="10" r="0.8" fill="currentColor" stroke="none" />
+                      <circle cx="17" cy="7" r="0.5" fill="currentColor" stroke="none" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 3: Family Blessings — icon above, text below -->
+              <div class="footer__tl-item">
+                <div class="footer__tl-upper">
+                  <div class="footer__tl-icon" aria-hidden="true">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <circle cx="12" cy="12" r="2.5" />
+                      <ellipse cx="12" cy="6.5" rx="2" ry="4" transform="rotate(0 12 12)" />
+                      <ellipse cx="12" cy="6.5" rx="2" ry="4" transform="rotate(72 12 12)" />
+                      <ellipse cx="12" cy="6.5" rx="2" ry="4" transform="rotate(144 12 12)" />
+                      <ellipse cx="12" cy="6.5" rx="2" ry="4" transform="rotate(216 12 12)" />
+                      <ellipse cx="12" cy="6.5" rx="2" ry="4" transform="rotate(288 12 12)" />
+                    </svg>
+                  </div>
+                </div>
+                <div class="footer__tl-mid">
+                  <div class="footer__tl-line"></div>
+                  <div class="footer__tl-dot"></div>
+                  <div class="footer__tl-line"></div>
+                </div>
+                <div class="footer__tl-lower">
+                  <span class="footer__tl-date">12 · 08 · 2024</span>
+                  <span class="footer__tl-label">Family Blessings</span>
+                </div>
+              </div>
+
+              <!-- 4: Wedding Day — text above, icon below -->
+              <div class="footer__tl-item">
+                <div class="footer__tl-upper">
+                  <span class="footer__tl-label">Wedding Day</span>
+                  <span class="footer__tl-date">15 · 12 · 2025</span>
+                </div>
+                <div class="footer__tl-mid">
+                  <div class="footer__tl-line"></div>
+                  <div class="footer__tl-dot"></div>
+                  <div class="footer__tl-line"></div>
+                </div>
+                <div class="footer__tl-lower">
+                  <div class="footer__tl-icon" aria-hidden="true">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <circle cx="9" cy="12" r="6" />
+                      <circle cx="15" cy="12" r="6" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 5: Reception — icon above, text below -->
+              <div class="footer__tl-item">
+                <div class="footer__tl-upper">
+                  <div class="footer__tl-icon" aria-hidden="true">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M12 3 L13.5 9.5 L20 12 L13.5 14.5 L12 21 L10.5 14.5 L4 12 L10.5 9.5 Z" />
+                      <circle cx="5" cy="5" r="1" fill="currentColor" stroke="none" />
+                      <circle cx="19" cy="5" r="0.7" fill="currentColor" stroke="none" />
+                    </svg>
+                  </div>
+                </div>
+                <div class="footer__tl-mid">
+                  <div class="footer__tl-line"></div>
+                  <div class="footer__tl-dot"></div>
+                  <div class="footer__tl-line"></div>
+                </div>
+                <div class="footer__tl-lower">
+                  <span class="footer__tl-date">17 · 12 · 2025</span>
+                  <span class="footer__tl-label">Reception</span>
                 </div>
               </div>
             </div>
           </div>
-          <div class="footer__brand">
-            <span class="footer__monogram" aria-hidden="true">D &amp; A</span>
-            <span class="footer__couple-name">Debmalya &amp; Ankita</span>
-            <span class="footer__date">15 · 12 · 2025</span>
-            <div class="gold-divider" style="width: 100%; max-width: 200px" aria-hidden="true">
-              <span class="gold-divider--text">♦</span>
-            </div>
-            <p class="footer__quote">"Two souls, one forever."</p>
-          </div>
+
+          <!-- Social links -->
           <div class="footer__social">
-            <span class="footer__social-label">Follow Along</span>
-            <div class="footer__social-links">
-              <a
-                href="https://www.instagram.com/d.e.b.m.a.l.y.a/"
-                class="footer__social-link"
-                aria-label="Debmalya on Instagram"
-                rel="noopener"
-                target="_blank"
-              >
-                <svg class="footer__social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
-                  />
-                </svg>
-                @d.e.b.m.a.l.y.a
-              </a>
-              <a
-                href="https://www.facebook.com/iamMrHobo/"
-                class="footer__social-link"
-                aria-label="Debmalya on Facebook"
-                rel="noopener"
-                target="_blank"
-              >
-                <svg class="footer__social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
-                  />
-                </svg>
-                @iamMrHobo
-              </a>
-              <a
-                href="https://www.instagram.com/ankittaaaaaaaa/"
-                class="footer__social-link"
-                aria-label="Ankita on Instagram"
-                rel="noopener"
-                target="_blank"
-              >
-                <svg class="footer__social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
-                  />
-                </svg>
-                @ankittaaaaaaaa
-              </a>
-              <a
-                href="https://www.facebook.com/dona.santra"
-                class="footer__social-link"
-                aria-label="Ankita on Facebook"
-                rel="noopener"
-                target="_blank"
-              >
-                <svg class="footer__social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
-                  />
-                </svg>
-                @dona.santra
-              </a>
-            </div>
+            <a
+              href="https://www.instagram.com/d.e.b.m.a.l.y.a/"
+              class="footer__social-link"
+              aria-label="Debmalya on Instagram"
+              rel="noopener"
+              target="_blank"
+            >
+              <svg class="footer__social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                />
+              </svg>
+              @d.e.b.m.a.l.y.a
+            </a>
+            <a
+              href="https://www.facebook.com/iamMrHobo/"
+              class="footer__social-link"
+              aria-label="Debmalya on Facebook"
+              rel="noopener"
+              target="_blank"
+            >
+              <svg class="footer__social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                />
+              </svg>
+              @iamMrHobo
+            </a>
+            <a
+              href="https://www.instagram.com/ankittaaaaaaaa/"
+              class="footer__social-link"
+              aria-label="Ankita on Instagram"
+              rel="noopener"
+              target="_blank"
+            >
+              <svg class="footer__social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                />
+              </svg>
+              @ankittaaaaaaaa
+            </a>
+            <a
+              href="https://www.facebook.com/dona.santra"
+              class="footer__social-link"
+              aria-label="Ankita on Facebook"
+              rel="noopener"
+              target="_blank"
+            >
+              <svg class="footer__social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                />
+              </svg>
+              @dona.santra
+            </a>
           </div>
         </div>
         <div class="footer__bottom">

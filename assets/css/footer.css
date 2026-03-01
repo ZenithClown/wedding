@@ -5,164 +5,126 @@
 .footer {
   background: var(--color-bg-alt);
   border-top: 1px solid var(--color-border);
-  padding-top: var(--space-14);
+  padding-top: var(--space-12);
   padding-bottom: var(--space-8);
 }
 
+/* Two-column: 80% timeline | 5% gap | 15% social */
 .footer__top {
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  gap: var(--space-12);
-  align-items: start;
+  grid-template-columns: 1fr 15%;
+  column-gap: 5%;
+  align-items: center;
   padding-bottom: var(--space-10);
   border-bottom: 1px solid var(--color-border);
 }
 
-/* --- Brand column (center) --- */
-.footer__brand {
-  text-align: center;
+/* --- Horizontal event timeline (left column) --- */
+.footer__timeline {
+  overflow: hidden;
+}
+
+.footer__tl-track {
+  display: flex;
+  align-items: stretch;
+}
+
+.footer__tl-item {
+  flex: 1;
+  display: grid;
+  grid-template-rows: 1fr auto 1fr;
+  min-width: 0;
+}
+
+.footer__tl-upper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--space-2);
-}
-
-.footer__monogram {
-  font-family: var(--font-serif);
-  font-size: 3.5rem;
-  font-weight: 300;
-  font-style: italic;
-  color: var(--color-gold);
-  line-height: 1;
-}
-
-.footer__couple-name {
-  font-family: var(--font-serif);
-  font-size: var(--text-xl);
-  font-weight: 300;
-  font-style: italic;
-  color: var(--color-text);
-  line-height: 1.2;
-}
-
-.footer__date {
-  font-family: var(--font-sans);
-  font-size: var(--text-xs);
-  letter-spacing: var(--tracking-super);
-  text-transform: uppercase;
-  color: var(--color-gold);
-}
-
-.footer__quote {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: var(--text-sm);
-  color: var(--color-text-muted);
-  max-width: 24ch;
-  text-align: center;
-  line-height: var(--leading-loose);
-}
-
-/* --- Left: Mini timeline --- */
-.footer__timeline {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-3);
-  padding-top: var(--space-4);
-}
-
-.footer__nav-label {
-  font-family: var(--font-sans);
-  font-size: 0.65rem;
-  letter-spacing: var(--tracking-super);
-  text-transform: uppercase;
-  color: var(--color-gold);
-  margin-bottom: var(--space-2);
-}
-
-.footer__timeline-list {
-  display: flex;
-  flex-direction: column;
-}
-
-.footer__timeline-item {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--space-3);
-}
-
-.footer__timeline-marker {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--color-gold);
-  flex-shrink: 0;
-  margin-top: 5px;
-}
-
-.footer__timeline-connector {
-  width: 1px;
-  height: var(--space-5);
-  background: var(--color-border-light);
-  margin-left: 3px;
-}
-
-.footer__timeline-info {
-  display: flex;
-  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: var(--space-3);
   gap: var(--space-1);
 }
 
-.footer__timeline-date {
+.footer__tl-lower {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: var(--space-3);
+  gap: var(--space-1);
+}
+
+.footer__tl-mid {
+  display: flex;
+  align-items: center;
+}
+
+.footer__tl-line {
+  flex: 1;
+  height: 1px;
+  background: var(--color-border-light);
+}
+
+.footer__tl-item:first-child .footer__tl-line:first-child,
+.footer__tl-item:last-child .footer__tl-line:last-child {
+  visibility: hidden;
+}
+
+.footer__tl-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--color-gold);
+  flex-shrink: 0;
+}
+
+.footer__tl-icon {
+  color: var(--color-gold);
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer__tl-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.footer__tl-date {
   font-family: var(--font-sans);
-  font-size: var(--text-xs);
+  font-size: 0.6rem;
   letter-spacing: var(--tracking-wide);
   color: var(--color-gold);
+  text-align: center;
+  white-space: nowrap;
 }
 
-.footer__timeline-event {
-  font-family: var(--font-sans);
+.footer__tl-label {
+  font-family: var(--font-serif);
+  font-style: italic;
   font-size: var(--text-sm);
-  color: var(--color-text);
-  font-weight: 400;
-}
-
-.footer__timeline-venue {
-  font-family: var(--font-sans);
-  font-size: var(--text-xs);
   color: var(--color-text-muted);
+  text-align: center;
+  white-space: nowrap;
 }
 
-/* --- Right: Social links --- */
+/* --- Right: Social links (right column) --- */
 .footer__social {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: var(--space-4);
-  padding-top: var(--space-4);
-}
-
-.footer__social-label {
-  font-family: var(--font-sans);
-  font-size: 0.65rem;
-  letter-spacing: var(--tracking-super);
-  text-transform: uppercase;
-  color: var(--color-gold);
-}
-
-.footer__social-links {
-  display: flex;
-  flex-direction: column;
   gap: var(--space-3);
-  align-items: flex-end;
+  align-self: center;
 }
 
 .footer__social-link {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-3);
+  gap: var(--space-2);
   font-family: var(--font-sans);
-  font-size: var(--text-sm);
+  font-size: var(--text-xs);
   color: var(--color-text-muted);
   text-decoration: none;
   transition: color var(--transition-base);
@@ -173,9 +135,10 @@
 }
 
 .footer__social-icon {
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   fill: currentColor;
+  flex-shrink: 0;
 }
 
 /* --- Bottom bar --- */
@@ -220,34 +183,22 @@
 @media (max-width: 900px) {
   .footer__top {
     grid-template-columns: 1fr;
-    text-align: center;
+    row-gap: var(--space-8);
   }
 
   .footer__timeline {
-    align-items: center;
-    order: 2;
+    overflow-x: auto;
   }
 
-  .footer__timeline-item {
-    justify-content: center;
-  }
-
-  .footer__timeline-connector {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .footer__brand {
-    order: 1;
+  .footer__tl-track {
+    min-width: 480px;
   }
 
   .footer__social {
     align-items: center;
-    order: 3;
-  }
-
-  .footer__social-links {
-    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .footer__bottom {
