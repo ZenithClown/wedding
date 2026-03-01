@@ -1,0 +1,12 @@
+<div class="page-hero" role="banner" aria-label="{{ include.aria_label }}">
+  <div
+    class="page-hero__bg"
+    style="background-image: url(&quot;{{ include.bg_url }}&quot;)"
+    aria-hidden="true"
+  ></div>
+  <div class="page-hero__overlay" aria-hidden="true"></div>
+  <div class="page-hero__content container">
+    <p class="page-hero__label">{{ include.label }}</p>
+    <h1 class="page-hero__title">{{ include.title_plain }} <em>{{ include.title_em }}</em></h1>
+  </div>
+</div>

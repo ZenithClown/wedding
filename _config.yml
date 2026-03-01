@@ -1,0 +1,16 @@
+# Site settings
+title: "Debmalya & Ankita — A Wedding Story"
+description: "Personal wedding memory site for Debmalya Pramanik and Ankita Santra."
+url: ""
+baseurl: ""
+
+# Build settings
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - CLAUDE.md
+  - .claude/
+  - node_modules/
+  - .prettierrc
+  - .prettierignore
+  - vendor/
