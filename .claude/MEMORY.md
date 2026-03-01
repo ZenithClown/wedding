@@ -17,11 +17,12 @@ NOT a photography studio site — no business copy, no services, no pricing, no 
 - Fonts: `Cormorant Garamond` (headings, italic) + `Lato` (body, nav) via Google Fonts
 - Max width: 1500px · Desktop gutter: 4vw · Mobile gutter: 6vw
 
-## Pages (5 total — ALL BUILT)
+## Pages (6 total — ALL BUILT)
 - `index.html` — Home: video hero, quote, gallery preview (6 imgs), films preview (featured+3), pre-wedding preview (3)
-- `wedding-stories.html` — Full gallery: infinite scroll, filter (All/Ceremony/Reception/Portraits/Details/Candid), lightbox
-- `wedding-films.html` — Featured film (large) + 6 film cards in 3-col grid, lazy YouTube embed
-- `couple-shoot.html` — Same gallery component, window.GALLERY_OVERRIDE injects couple shoot images, filter (All/Beach/City/Nature/Studio)
+- `gallery.html` — Full gallery: infinite scroll, filter (All/Ceremony/Reception/Portraits/Details/Candid), lightbox
+- `videography.html` — Featured film (large) + 6 film cards in 3-col grid, lazy YouTube embed
+- `prewedding.html` — Gallery with GALLERY_OVERRIDE, filter (All/Beach/City/Nature/Studio)
+- `collages.html` — Group Photos gallery with GALLERY_OVERRIDE, filter (All/Family/Friends/Bridal Party)
 - `404.html` — Custom 404 with couple branding
 
 ## CSS Files (9 files — ALL BUILT)
@@ -37,7 +38,7 @@ variables.css → reset.css → base.css → animations.css → navbar.css → h
 ## Key Patterns
 - Infinite scroll: IntersectionObserver on `.load-more-trigger` sentinel div
 - YouTube embed: `<div data-youtube-id="ID" data-title="Title">` — click event swaps to iframe
-- Couple-shoot page overrides image data via `window.GALLERY_OVERRIDE = [...]` before gallery.js loads
+- `prewedding.html` and `collages.html` override image data via `window.GALLERY_OVERRIDE = [...]` before gallery.js loads
 - Reveal on scroll: add class `reveal`, `reveal--left`, `reveal--right`, or `reveal--scale` to elements
 - Stagger animation: wrap children in `.stagger` parent — nth-child delays are auto-applied
 - Image data format: `{ src, thumb, alt, category, caption }`
@@ -49,3 +50,7 @@ Place hero video at `./assets/video/hero.mp4` (under 15MB).
 Update social media href="#" with real URLs.
 Update `data-youtube-id` values with real YouTube video IDs.
 GitHub Pages deploy: push to main, enable Pages in repo Settings.
+
+## Page File Names (canonical)
+- `index.html` · `gallery.html` · `videography.html` · `prewedding.html` · `collages.html` · `404.html`
+- Renamed from: wedding-stories.html → gallery.html, wedding-films.html → videography.html, couple-shoot.html → prewedding.html

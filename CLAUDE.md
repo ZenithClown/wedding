@@ -50,7 +50,7 @@ Design tokens (colors, fonts, spacing) live exclusively in `variables.css`. Neve
 
 **YouTube lazy embed** — Thumbnails are static `<div data-youtube-id="ID" data-title="Title">`. A click handler replaces the div's content with an `<iframe>`. Never load iframes on page load.
 
-**Gallery data** — Each image object: `{ src, thumb, alt, category, caption }`. Wedding gallery images live at the top of `gallery.js`. Couple-shoot images are injected via `window.GALLERY_OVERRIDE = [...]` in the `<head>` of `couple-shoot.html` before `gallery.js` loads.
+**Gallery data** — Each image object: `{ src, thumb, alt, category, caption }`. Wedding gallery images live at the top of `gallery.js`. Couple-shoot and group-photo images are injected via `window.GALLERY_OVERRIDE = [...]` in the `<head>` of `prewedding.html` and `collages.html` respectively, before `gallery.js` loads.
 
 **Reveal on scroll** — Add CSS class `reveal`, `reveal--left`, `reveal--right`, or `reveal--scale` to any element. Stagger children by wrapping them in a `.stagger` parent.
 
@@ -82,7 +82,7 @@ Design tokens (colors, fonts, spacing) live exclusively in `variables.css`. Neve
 
 ## Before Production Deploy
 
-1. Replace all `picsum.photos` placeholder `src` values in `gallery.js` and `couple-shoot.html` with real image paths.
+1. Replace all `picsum.photos` placeholder `src` values in `gallery.js`, `prewedding.html`, and `collages.html` with real image paths.
 2. Place hero video at `./assets/video/hero.mp4` (keep under 15 MB; use `preload="metadata"`).
 3. Update `data-youtube-id` values with real YouTube video IDs.
 4. Update social media `href="#"` anchors in the footer with real profile URLs.
