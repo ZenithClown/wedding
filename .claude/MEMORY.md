@@ -1,7 +1,7 @@
-# Project Memory — Personal Wedding Portfolio
+# Project Memory — Debmalya & Ankita Wedding Website
 
 ## What This Project Is
-Personal wedding portfolio website for **Debmalya Pramanik** (groom) and **Ankita Santra** (bride).
+Personal wedding memory site for **Debmalya Pramanik** (groom) and **Ankita Santra** (bride).
 Pure HTML/CSS/JS, hosted on GitHub Pages. Inspired by knotsbyamp.com aesthetic (dark, gold, cinematic).
 NOT a photography studio site — no business copy, no services, no pricing, no contact form, no team/staff.
 
@@ -51,10 +51,20 @@ variables.css → reset.css → base.css → animations.css → navbar.css → h
 - Skill: `.claude/skills/formatter/SKILL.md` — trigger keywords: format, prettier, prettify, reformat, beautify
 - Command: `npx prettier --write "**/*.html" "assets/css/**/*.css" "assets/js/**/*.js"`
 
+## Footer Architecture (2-column horizontal layout)
+Grid: `1fr 15%` with `column-gap: 5%`. Classes: `.footer__timeline > .footer__tl-track > .footer__tl-item`.
+Each `.footer__tl-item` has `.footer__tl-upper` / `.footer__tl-mid` (line+dot+line) / `.footer__tl-lower`.
+- Odd events (1,3,5): icon in upper, date+label in lower
+- Even events (2,4): label+date in upper, icon in lower
+Events: First Meet (20.02.2022) · First Date (24.03.2022) · Family Blessings (12.08.2024) · Wedding Day (15.12.2025) · Reception (17.12.2025)
+Social column `.footer__social`: 4 direct `<a>` anchors — real URLs set, no wrapper div.
+- @d.e.b.m.a.l.y.a (IG) · @iamMrHobo (FB) · @ankittaaaaaaaa (IG) · @dona.santra (FB)
+Photo credit links: @photography_world_since2014 (IG) · PhoTographY WorLd (FB)
+
 ## Current Status — PRODUCTION SITE BUILT
-All files created. Replace picsum.photos images with real photos before deploy.
+All files created. Footer social links and photo credits have real URLs.
+Replace picsum.photos images with real photos before deploy.
 Place hero video at `./assets/video/hero.mp4` (under 15MB).
-Update social media href="#" with real URLs.
 Update `data-youtube-id` values with real YouTube video IDs.
 GitHub Pages deploy: push to main, enable Pages in repo Settings.
 

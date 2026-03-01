@@ -95,10 +95,19 @@ npx prettier --check "**/*.html" "assets/css/**/*.css" "assets/js/**/*.js"
 Key settings: `printWidth: 120` · `tabWidth: 2` · `singleQuote: false` · `endOfLine: "lf"`.
 The `formatter` skill at `.claude/skills/formatter/SKILL.md` documents the full workflow.
 
+## Footer Structure
+
+Two-column layout (CSS Grid `1fr 15%`, `column-gap: 5%`):
+- **Left (timeline):** Horizontal 5-event story timeline — First Meet (20.02.2022) · First Date (24.03.2022) · Family Blessings (12.08.2024) · Wedding Day (15.12.2025) · Reception (17.12.2025). Odd events: icon above / date+label below. Even events: label+date above / icon below. Inline SVG icons (stroke-based).
+- **Right (social):** 4 direct `<a class="footer__social-link">` anchors — no wrapper div, no label.
+- **Bottom bar:** copyright · photography credit.
+
+Social links (already real URLs): @d.e.b.m.a.l.y.a (IG) · @iamMrHobo (FB) · @ankittaaaaaaaa (IG) · @dona.santra (FB)
+Photo credits: @photography_world_since2014 (IG) · PhoTographY WorLd (FB)
+
 ## Before Production Deploy
 
 1. Replace all `picsum.photos` placeholder `src` values in `gallery.js`, `prewedding.html`, and `collages.html` with real image paths.
 2. Place hero video at `./assets/video/hero.mp4` (keep under 15 MB; use `preload="metadata"`).
 3. Update `data-youtube-id` values with real YouTube video IDs.
-4. Update social media `href="#"` anchors in the footer with real profile URLs.
-5. Add real `./assets/images/og-image.jpg` and `./assets/images/poster.jpg`.
+4. Add real `./assets/images/og-image.jpg` and `./assets/images/poster.jpg`.
