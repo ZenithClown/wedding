@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npx prettier --write \"**/*.html\" \"assets/css/**/*.css\" \"assets/js/**/*.js\")"
+      "Bash(npx prettier --write \"**/*.html\" \"assets/css/**/*.css\" \"assets/js/**/*.js\")",
+      "Bash(git add*)",
+      "Bash(git commit*)"
     ]
   }
 }
