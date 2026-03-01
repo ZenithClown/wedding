@@ -49,12 +49,7 @@
   position: absolute;
   inset: 0;
   z-index: 2;
-  background: linear-gradient(
-    to bottom,
-    rgba(0,0,0,0.25) 0%,
-    rgba(0,0,0,0.50) 50%,
-    rgba(0,0,0,0.75) 100%
-  );
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.75) 100%);
 }
 
 /* --- Content --- */
@@ -219,8 +214,12 @@
   font-style: normal;
 }
 
-.quote-section__mark--open  { margin-right: 0.15em; }
-.quote-section__mark--close { margin-left: 0.15em; }
+.quote-section__mark--open {
+  margin-right: 0.15em;
+}
+.quote-section__mark--close {
+  margin-left: 0.15em;
+}
 
 .quote-section__attribution {
   display: block;

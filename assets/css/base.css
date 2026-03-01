@@ -18,9 +18,16 @@ body.lightbox-open {
 }
 
 /* --- Scrollbar --- */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--color-bg); }
-::-webkit-scrollbar-thumb { background: var(--color-gold-dark); border-radius: 3px; }
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-gold-dark);
+  border-radius: 3px;
+}
 
 /* --- Containers --- */
 .container {
@@ -43,23 +50,52 @@ body.lightbox-open {
 }
 
 /* --- Typography --- */
-.font-serif   { font-family: var(--font-serif); }
-.font-sans    { font-family: var(--font-sans); }
+.font-serif {
+  font-family: var(--font-serif);
+}
+.font-sans {
+  font-family: var(--font-sans);
+}
 
-.text-xs      { font-size: var(--text-xs); }
-.text-sm      { font-size: var(--text-sm); }
-.text-lg      { font-size: var(--text-lg); }
-.text-xl      { font-size: var(--text-xl); }
-.text-2xl     { font-size: var(--text-2xl); }
+.text-xs {
+  font-size: var(--text-xs);
+}
+.text-sm {
+  font-size: var(--text-sm);
+}
+.text-lg {
+  font-size: var(--text-lg);
+}
+.text-xl {
+  font-size: var(--text-xl);
+}
+.text-2xl {
+  font-size: var(--text-2xl);
+}
 
-.text-gold    { color: var(--color-gold); }
-.text-muted   { color: var(--color-text-muted); }
-.text-center  { text-align: center; }
-.text-upper   { text-transform: uppercase; letter-spacing: var(--tracking-wider); }
+.text-gold {
+  color: var(--color-gold);
+}
+.text-muted {
+  color: var(--color-text-muted);
+}
+.text-center {
+  text-align: center;
+}
+.text-upper {
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+}
 
-.italic       { font-style: italic; }
-.weight-300   { font-weight: 300; }
-.weight-600   { font-weight: 600; }
+.italic {
+  font-style: italic;
+}
+.weight-300 {
+  font-weight: 300;
+}
+.weight-600 {
+  font-weight: 600;
+}
 
 /* --- Section Headers --- */
 .section-label {
@@ -117,7 +153,7 @@ body.lightbox-open {
 
 .gold-divider::before,
 .gold-divider::after {
-  content: '';
+  content: "";
   flex: 1;
   height: 1px;
   background: linear-gradient(to right, transparent, var(--color-gold), transparent);
@@ -143,15 +179,20 @@ body.lightbox-open {
   text-transform: uppercase;
   padding: 0.85rem 2.5rem;
   border: 1px solid transparent;
-  transition: background var(--transition-base),
-              color var(--transition-base),
-              border-color var(--transition-base),
-              transform var(--transition-fast);
+  transition:
+    background var(--transition-base),
+    color var(--transition-base),
+    border-color var(--transition-base),
+    transform var(--transition-fast);
   cursor: pointer;
 }
 
-.btn:hover { transform: translateY(-1px); }
-.btn:active { transform: translateY(0); }
+.btn:hover {
+  transform: translateY(-1px);
+}
+.btn:active {
+  transform: translateY(0);
+}
 
 .btn--gold {
   background: var(--color-gold);
@@ -246,18 +287,32 @@ body.lightbox-open {
   padding: 0;
   margin: -1px;
   overflow: hidden;
-  clip: rect(0,0,0,0);
+  clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
 }
 
-.d-flex        { display: flex; }
-.align-center  { align-items: center; }
-.justify-center{ justify-content: center; }
-.gap-4         { gap: var(--space-4); }
-.gap-8         { gap: var(--space-8); }
-.mt-8          { margin-top: var(--space-8); }
-.mt-12         { margin-top: var(--space-12); }
+.d-flex {
+  display: flex;
+}
+.align-center {
+  align-items: center;
+}
+.justify-center {
+  justify-content: center;
+}
+.gap-4 {
+  gap: var(--space-4);
+}
+.gap-8 {
+  gap: var(--space-8);
+}
+.mt-8 {
+  margin-top: var(--space-8);
+}
+.mt-12 {
+  margin-top: var(--space-12);
+}
 
 /* --- Scroll-to-top --- */
 #scroll-top {
@@ -276,7 +331,9 @@ body.lightbox-open {
   opacity: 0;
   pointer-events: none;
   transform: translateY(10px);
-  transition: opacity var(--transition-base), transform var(--transition-base);
+  transition:
+    opacity var(--transition-base),
+    transform var(--transition-base);
   z-index: var(--z-nav);
 }
 
@@ -312,7 +369,9 @@ body.lightbox-open {
 }
 
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .load-more-trigger {
@@ -324,5 +383,8 @@ body.lightbox-open {
 
 /* --- Responsive base --- */
 @media (max-width: 768px) {
-  .page-hero { height: 35vh; min-height: 220px; }
+  .page-hero {
+    height: 35vh;
+    min-height: 220px;
+  }
 }
