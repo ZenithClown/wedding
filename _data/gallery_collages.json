@@ -1,0 +1,142 @@
+[
+  {
+    "src": "https://picsum.photos/seed/grp1/1200/800",
+    "thumb": "https://picsum.photos/seed/grp1/600/400",
+    "alt": "Family portrait",
+    "category": "family",
+    "caption": "The Families Together"
+  },
+  {
+    "src": "https://picsum.photos/seed/grp2/1200/800",
+    "thumb": "https://picsum.photos/seed/grp2/600/400",
+    "alt": "Bride with bridesmaids",
+    "category": "bridal-party",
+    "caption": "Bridal Squad"
+  },
+  {
+    "src": "https://picsum.photos/seed/grp3/1200/800",
+    "thumb": "https://picsum.photos/seed/grp3/600/400",
+    "alt": "Groom with groomsmen",
+    "category": "bridal-party",
+    "caption": "The Groomsmen"
+  },
+  {
+    "src": "https://picsum.photos/seed/grp4/1200/800",
+    "thumb": "https://picsum.photos/seed/grp4/600/400",
+    "alt": "Friends group photo",
+    "category": "friends",
+    "caption": "Our People"
+  },
+  {
+    "src": "https://picsum.photos/seed/grp5/800/1200",
+    "thumb": "https://picsum.photos/seed/grp5/400/600",
+    "alt": "Parents and couple",
+    "category": "family",
+    "caption": "With Our Parents"
+  },
+  {
+    "src": "https://picsum.photos/seed/grp6/1200/800",
+    "thumb": "https://picsum.photos/seed/grp6/600/400",
+    "alt": "College friends reunion",
+    "category": "friends",
+    "caption": "Old Friends, New Memories"
+  },
+  {
+    "src": "https://picsum.photos/seed/grp7/1200/800",
+    "thumb": "https://picsum.photos/seed/grp7/600/400",
+    "alt": "Full bridal party",
+    "category": "bridal-party",
+    "caption": "The Full Party"
+  },
+  {
+    "src": "https://picsum.photos/seed/grp8/800/1200",
+    "thumb": "https://picsum.photos/seed/grp8/400/600",
+    "alt": "Extended family portrait",
+    "category": "family",
+    "caption": "All of Us"
+  },
+  {
+    "src": "https://picsum.photos/seed/grp9/1200/800",
+    "thumb": "https://picsum.photos/seed/grp9/600/400",
+    "alt": "Friends candid moment",
+    "category": "friends",
+    "caption": "Pure Joy"
+  },
+  {
+    "src": "https://picsum.photos/seed/grp10/1200/800",
+    "thumb": "https://picsum.photos/seed/grp10/600/400",
+    "alt": "Bride family portrait",
+    "category": "family",
+    "caption": "Bride's Family"
+  },
+  {
+    "src": "https://picsum.photos/seed/grp11/1200/800",
+    "thumb": "https://picsum.photos/seed/grp11/600/400",
+    "alt": "Groom family portrait",
+    "category": "family",
+    "caption": "Groom's Family"
+  },
+  {
+    "src": "https://picsum.photos/seed/grp12/800/1200",
+    "thumb": "https://picsum.photos/seed/grp12/400/600",
+    "alt": "Bridesmaids candid",
+    "category": "bridal-party",
+    "caption": "Bridesmaids"
+  },
+  {
+    "src": "https://picsum.photos/seed/grp13/1200/800",
+    "thumb": "https://picsum.photos/seed/grp13/600/400",
+    "alt": "Childhood friends together",
+    "category": "friends",
+    "caption": "Childhood to Forever"
+  },
+  {
+    "src": "https://picsum.photos/seed/grp14/1200/800",
+    "thumb": "https://picsum.photos/seed/grp14/600/400",
+    "alt": "Groomsmen candid laugh",
+    "category": "bridal-party",
+    "caption": "The Boys"
+  },
+  {
+    "src": "https://picsum.photos/seed/grp15/1200/800",
+    "thumb": "https://picsum.photos/seed/grp15/600/400",
+    "alt": "Full family gathering",
+    "category": "family",
+    "caption": "One Big Family"
+  },
+  {
+    "src": "https://picsum.photos/seed/grp16/800/1200",
+    "thumb": "https://picsum.photos/seed/grp16/400/600",
+    "alt": "Friends dancing reception",
+    "category": "friends",
+    "caption": "Dance Floor Friends"
+  },
+  {
+    "src": "https://picsum.photos/seed/grp17/1200/800",
+    "thumb": "https://picsum.photos/seed/grp17/600/400",
+    "alt": "Bridal party at ceremony steps",
+    "category": "bridal-party",
+    "caption": "At the Steps"
+  },
+  {
+    "src": "https://picsum.photos/seed/grp18/1200/800",
+    "thumb": "https://picsum.photos/seed/grp18/600/400",
+    "alt": "Cousins group photo",
+    "category": "family",
+    "caption": "Cousins"
+  },
+  {
+    "src": "https://picsum.photos/seed/grp19/1200/800",
+    "thumb": "https://picsum.photos/seed/grp19/600/400",
+    "alt": "Work friends group",
+    "category": "friends",
+    "caption": "Our Crew"
+  },
+  {
+    "src": "https://picsum.photos/seed/grp20/1200/800",
+    "thumb": "https://picsum.photos/seed/grp20/600/400",
+    "alt": "Entire wedding party",
+    "category": "bridal-party",
+    "caption": "Together"
+  }
+]

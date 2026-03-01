@@ -1,0 +1,142 @@
+[
+  {
+    "src": "https://picsum.photos/seed/cs1/1200/800",
+    "thumb": "https://picsum.photos/seed/cs1/600/400",
+    "alt": "Couple at the beach",
+    "category": "beach",
+    "caption": "Sunrise Together"
+  },
+  {
+    "src": "https://picsum.photos/seed/cs2/800/1200",
+    "thumb": "https://picsum.photos/seed/cs2/400/600",
+    "alt": "Couple portrait beach",
+    "category": "beach",
+    "caption": "Sandy Shores"
+  },
+  {
+    "src": "https://picsum.photos/seed/cs3/1200/800",
+    "thumb": "https://picsum.photos/seed/cs3/600/400",
+    "alt": "City couple portrait",
+    "category": "city",
+    "caption": "City of Love"
+  },
+  {
+    "src": "https://picsum.photos/seed/cs4/1200/800",
+    "thumb": "https://picsum.photos/seed/cs4/600/400",
+    "alt": "Night city lights",
+    "category": "city",
+    "caption": "Night Lights"
+  },
+  {
+    "src": "https://picsum.photos/seed/cs5/1200/800",
+    "thumb": "https://picsum.photos/seed/cs5/600/400",
+    "alt": "Couple in forest",
+    "category": "nature",
+    "caption": "Into the Woods"
+  },
+  {
+    "src": "https://picsum.photos/seed/cs6/800/1200",
+    "thumb": "https://picsum.photos/seed/cs6/400/600",
+    "alt": "Meadow portrait",
+    "category": "nature",
+    "caption": "Golden Fields"
+  },
+  {
+    "src": "https://picsum.photos/seed/cs7/1200/800",
+    "thumb": "https://picsum.photos/seed/cs7/600/400",
+    "alt": "Studio dramatic portrait",
+    "category": "studio",
+    "caption": "Studio Light"
+  },
+  {
+    "src": "https://picsum.photos/seed/cs8/1200/800",
+    "thumb": "https://picsum.photos/seed/cs8/600/400",
+    "alt": "Beach golden hour",
+    "category": "beach",
+    "caption": "Golden Hour"
+  },
+  {
+    "src": "https://picsum.photos/seed/cs9/1200/800",
+    "thumb": "https://picsum.photos/seed/cs9/600/400",
+    "alt": "Street photography couple",
+    "category": "city",
+    "caption": "Urban Romance"
+  },
+  {
+    "src": "https://picsum.photos/seed/cs10/1200/800",
+    "thumb": "https://picsum.photos/seed/cs10/600/400",
+    "alt": "Waterfall couple",
+    "category": "nature",
+    "caption": "By the Waterfall"
+  },
+  {
+    "src": "https://picsum.photos/seed/cs11/800/1200",
+    "thumb": "https://picsum.photos/seed/cs11/400/600",
+    "alt": "Studio silhouette",
+    "category": "studio",
+    "caption": "Silhouette"
+  },
+  {
+    "src": "https://picsum.photos/seed/cs12/1200/800",
+    "thumb": "https://picsum.photos/seed/cs12/600/400",
+    "alt": "Mountain view couple",
+    "category": "nature",
+    "caption": "Mountain Top"
+  },
+  {
+    "src": "https://picsum.photos/seed/cs13/1200/800",
+    "thumb": "https://picsum.photos/seed/cs13/600/400",
+    "alt": "Couple laughing beach",
+    "category": "beach",
+    "caption": "Pure Laughter"
+  },
+  {
+    "src": "https://picsum.photos/seed/cs14/1200/800",
+    "thumb": "https://picsum.photos/seed/cs14/600/400",
+    "alt": "Rooftop city portrait",
+    "category": "city",
+    "caption": "Rooftop Dreams"
+  },
+  {
+    "src": "https://picsum.photos/seed/cs15/1200/800",
+    "thumb": "https://picsum.photos/seed/cs15/600/400",
+    "alt": "Countryside couple",
+    "category": "nature",
+    "caption": "Open Fields"
+  },
+  {
+    "src": "https://picsum.photos/seed/cs16/800/1200",
+    "thumb": "https://picsum.photos/seed/cs16/400/600",
+    "alt": "Studio close portrait",
+    "category": "studio",
+    "caption": "Intimate"
+  },
+  {
+    "src": "https://picsum.photos/seed/cs17/1200/800",
+    "thumb": "https://picsum.photos/seed/cs17/600/400",
+    "alt": "Sunset beach couple",
+    "category": "beach",
+    "caption": "Sunset Kiss"
+  },
+  {
+    "src": "https://picsum.photos/seed/cs18/1200/800",
+    "thumb": "https://picsum.photos/seed/cs18/600/400",
+    "alt": "City bridge couple",
+    "category": "city",
+    "caption": "Bridge of Sighs"
+  },
+  {
+    "src": "https://picsum.photos/seed/cs19/1200/800",
+    "thumb": "https://picsum.photos/seed/cs19/600/400",
+    "alt": "Lake side couple",
+    "category": "nature",
+    "caption": "Still Waters"
+  },
+  {
+    "src": "https://picsum.photos/seed/cs20/1200/800",
+    "thumb": "https://picsum.photos/seed/cs20/600/400",
+    "alt": "Studio editorial couple",
+    "category": "studio",
+    "caption": "Editorial"
+  }
+]

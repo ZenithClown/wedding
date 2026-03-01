@@ -4,23 +4,27 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Personal wedding portfolio website for **Debmalya Pramanik** (groom) and **Ankita Santra** (bride). Pure HTML/CSS/JS — no framework, no build tool, no package manager. Hosted on GitHub Pages. Inspired by the dark, cinematic aesthetic of knotsbyamp.com.
+Personal wedding portfolio website for **Debmalya Pramanik** (groom) and **Ankita Santra** (bride). HTML/CSS/JS with **Jekyll** for reusable layouts and includes. Hosted on GitHub Pages (Jekyll is built automatically on push). Inspired by the dark, cinematic aesthetic of knotsbyamp.com.
 
 This is a **personal memory site**, not a photography business. Never add studio/business copy (services, pricing, contact forms, team bios).
 
 ## Development Workflow
 
-No build step. Open HTML files directly in a browser or use a local static server:
+Jekyll processes pages with front matter. GitHub Pages builds automatically on push. For local development:
 
 ```bash
-# Python (any machine with Python 3)
-python -m http.server 8080
+# Install Jekyll (requires Ruby)
+gem install bundler
+bundle install
 
-# Node (if available)
-npx serve .
+# Serve locally (watches for changes)
+bundle exec jekyll serve
+# → http://localhost:4000
 ```
 
 All asset paths are **relative** (e.g. `./assets/css/base.css`) so the site works on a GitHub Pages subdirectory URL. Never switch to absolute paths.
+
+**Without Ruby installed:** Push to GitHub and let GitHub Pages build. Or open HTML source files via `python -m http.server 8080` — the raw `.html` files won't have includes resolved, but CSS/JS will still load.
 
 ## Deployment
 
@@ -28,10 +32,55 @@ Push to `main` branch → GitHub Pages serves the root automatically. Confirm in
 
 ## Architecture
 
+### Jekyll structure
+```
+_layouts/default.html   ← single layout for all pages (head, navbar, footer, scripts)
+_includes/
+  navbar.html           ← navbar + mobile drawer (uses page.nav_active for active link)
+  footer.html           ← footer timeline + social links + bottom bar
+  scroll-top.html       ← scroll-to-top button
+  lightbox.html         ← lightbox modal (included by gallery/prewedding/collages pages)
+  page-hero.html        ← inner-page hero banner (include with parameters)
+_data/
+  gallery_prewedding.json  ← GALLERY_OVERRIDE data for prewedding.html
+  gallery_collages.json    ← GALLERY_OVERRIDE data for collages.html
+```
+
+### Page front matter (key variables)
+| Variable | Type | Purpose |
+|---|---|---|
+| `layout` | string | Always `default` |
+| `title` | string | `<title>` and og:title |
+| `description` | string | meta description |
+| `canonical` | string | canonical + og:url href |
+| `og_title` | string | Override og:title (optional) |
+| `og_description` | string | Override og:description (optional) |
+| `robots` | string | Default `index, follow`; set `noindex, nofollow` for 404 |
+| `nav_active` | string | Active mobile-drawer link: `home`, `gallery`, `videography`, `prewedding`, `collages` |
+| `extra_css` | list | CSS files to load between `navbar.css` and `footer.css` |
+| `extra_js` | list | JS files to load after `navbar.js` (before `scroll-top.js`) |
+| `gallery_data` | string | Key in `_data/` for GALLERY_OVERRIDE injection (e.g. `gallery_prewedding`) |
+| `couple_shoot_mode` | bool | Sets `window.COUPLE_SHOOT_MODE = true` in `<head>` |
+| `navbar_scrolled` | bool | Adds `scrolled` class to navbar (used by 404) |
+| `no_footer` | bool | Omits footer include (used by 404) |
+| `no_scroll_top` | bool | Omits scroll-top button and script (used by 404) |
+| `error_page` | bool | Injects inline error-page CSS into `<head>` (used by 404) |
+
+### Including the page-hero banner
+```liquid
+{% include page-hero.html
+  aria_label="Wedding Stories"
+  bg_url="https://..."
+  label="Our Gallery"
+  title_plain="Wedding"
+  title_em="Stories"
+%}
+```
+
 ### CSS load order (every page must follow this)
 ```
 variables.css → reset.css → base.css → animations.css → navbar.css
-→ hero.css (index.html only) → gallery.css → films.css → footer.css
+→ [extra_css from front matter] → footer.css
 ```
 Design tokens (colors, fonts, spacing) live exclusively in `variables.css`. Never hard-code values that already exist as CSS custom properties.
 
@@ -80,9 +129,15 @@ Design tokens (colors, fonts, spacing) live exclusively in `variables.css`. Neve
 - Wedding date: `15 · 12 · 2025`
 - Copyright: `© 2025 Debmalya Pramanik & Ankita Santra`
 
+## Jekyll-specific Notes
+
+- **GALLERY_OVERRIDE**: Data now lives in `_data/gallery_prewedding.json` and `_data/gallery_collages.json`. The layout injects `window.GALLERY_OVERRIDE = {{ site.data[page.gallery_data] | jsonify }};` before the deferred scripts. Since `gallery.js` uses `defer`, the inline script always runs first.
+- **Adding a new page**: Create the `.html` file with Jekyll front matter. The layout handles `<head>`, navbar, footer, and scripts automatically.
+- **Active nav link**: Desktop highlight is handled by `navbar.js` (URL match). Mobile drawer active class is set via `page.nav_active` in front matter processed by `_includes/navbar.html`.
+
 ## Code Formatting
 
-All source files are formatted with **Prettier** (v3.8.1). Config lives in `.prettierrc`; exclusions in `.prettierignore`.
+All source files are formatted with **Prettier** (v3.8.1). Config lives in `.prettierrc`; exclusions in `.prettierignore`. Jekyll files (`_layouts/`, `_includes/`) are also formatted by Prettier.
 
 ```bash
 # Format all HTML, CSS, and JS files

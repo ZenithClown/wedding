@@ -1,0 +1,31 @@
+<header class="navbar{% if page.navbar_scrolled %} scrolled{% endif %}" role="banner">
+  <div class="navbar__inner">
+    <a href="./index.html" class="navbar__logo" aria-label="Debmalya and Ankita — Home">
+      <span class="navbar__logo-main">Debmalya &amp; Ankita</span>
+      <span class="navbar__logo-sub">Forever &amp; Always</span>
+    </a>
+    <nav class="navbar__nav" role="navigation" aria-label="Primary navigation">
+      <a href="./index.html" class="navbar__link">Home</a>
+      <a href="./gallery.html" class="navbar__link">Wedding Stories</a>
+      <a href="./videography.html" class="navbar__link">Wedding Films</a>
+      <a href="./prewedding.html" class="navbar__link">Pre-Wedding</a>
+      <a href="./collages.html" class="navbar__link">Group Photos</a>
+    </nav>
+    <button class="navbar__hamburger" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-drawer">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile Drawer -->
+<div class="nav-drawer" id="nav-drawer" role="dialog" aria-modal="true" aria-label="Navigation">
+  <div class="nav-drawer__overlay"></div>
+  <nav class="nav-drawer__panel">
+    <a href="./index.html" class="nav-drawer__link{% if page.nav_active == 'home' %} active{% endif %}">Home</a>
+    <a href="./gallery.html" class="nav-drawer__link{% if page.nav_active == 'gallery' %} active{% endif %}">Wedding Stories</a>
+    <a href="./videography.html" class="nav-drawer__link{% if page.nav_active == 'videography' %} active{% endif %}">Wedding Films</a>
+    <a href="./prewedding.html" class="nav-drawer__link{% if page.nav_active == 'prewedding' %} active{% endif %}">Pre-Wedding</a>
+    <a href="./collages.html" class="nav-drawer__link{% if page.nav_active == 'collages' %} active{% endif %}">Group Photos</a>
+    <p class="nav-drawer__footer">Debmalya &amp; Ankita · 2025</p>
+  </nav>
+</div>

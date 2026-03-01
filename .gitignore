@@ -22,3 +22,9 @@ yarn-error.log*
 
 # ─── Local dev & misc ─────────────────────────────────────────────────────────
 *.log
+
+# ─── Jekyll ────────────────────────────────────────────────────────────────────
+_site/
+.jekyll-cache/
+.jekyll-metadata
+Gemfile.lock
