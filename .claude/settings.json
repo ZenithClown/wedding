@@ -1,0 +1,17 @@
+{
+  "skills": {
+    "project": [
+      {
+        "name": "branding",
+        "description": "Governs all brand, design, and content decisions for the Debmalya & Ankita wedding website. Use when adding new sections, components, copy, colors, typography, or interactive features.",
+        "skill_path": ".claude/skills/branding/SKILL.md",
+        "trigger_keywords": [
+          "branding", "brand guidelines", "color scheme", "typography",
+          "design token", "website feature", "new section", "new component",
+          "new page", "add feature"
+        ],
+        "always_load": false
+      }
+    ]
+  }
+}
