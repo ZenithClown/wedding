@@ -49,6 +49,12 @@ Heading: Cormorant Garamond (italic) · Body/nav: Lato · Max width: 1500px
 - Pre-wedding (`prewedding.html`): no filter bar
 - Still using `picsum.photos` placeholders — replace with real images before deploy
 - `data-youtube-id` values need real YouTube IDs before deploy
+- Films carousel: 2 slides active (2 more commented out in index.html); dots must stay at 2
+
+## Known Bugs (fixed)
+- `hero.js:21` — was reading `dataset.target` instead of `dataset.counter`; counter animation was fully broken (fixed)
+- `index.html` carousel dots — had 4 dots for 2 active slides; trimmed to 2 (fixed)
+- `films.js:115` — `touchend` missing `{ passive: true }`; caused browser scroll-perf warning (fixed)
 
 ## Footer Social / Credits
 @d.e.b.m.a.l.y.a (IG) · @iamMrHobo (FB) · @ankittaaaaaaaa (IG) · @dona.santra (FB)

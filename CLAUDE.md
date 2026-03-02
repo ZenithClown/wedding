@@ -77,7 +77,7 @@ variables.css → reset.css → base.css → animations.css → navbar.css → [
 - **YouTube lazy** — `<div data-youtube-id="ID" data-title="Title">` click swaps to `<iframe>`. Never load on page load.
 - **GALLERY_OVERRIDE** — Layout injects `window.GALLERY_OVERRIDE = {{ site.data[page.gallery_data] | jsonify }};` before deferred `gallery.js`.
 - **Reveal on scroll** — Classes: `reveal`, `reveal--left`, `reveal--right`, `reveal--scale`. Stagger children via `.stagger` parent.
-- **Animated counters** — `data-counter="N"` on any element; `hero.js` animates 0→N on viewport entry.
+- **Animated counters** — `data-counter="N"` on any element; `hero.js` reads `dataset.counter` and animates 0→N on viewport entry. Optionally `data-suffix="+"` appends a suffix.
 - **Image data format** — `{ src, thumb, alt, category, caption }`.
 
 ## Design Tokens

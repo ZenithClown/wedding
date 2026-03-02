@@ -115,6 +115,6 @@
     carouselTrack.addEventListener("touchend", (e) => {
       const delta = touchStartX - e.changedTouches[0].clientX;
       if (Math.abs(delta) > 50) goTo(current + (delta > 0 ? 1 : -1));
-    });
+    }, { passive: true });
   }
 })();

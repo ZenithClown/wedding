@@ -18,7 +18,7 @@
 
   // --- Animated counters (stats bar) ---
   function animateCounter(el) {
-    const target = parseInt(el.dataset.target, 10);
+    const target = parseInt(el.dataset.counter, 10);
     const duration = 1800;
     const start = performance.now();
 
