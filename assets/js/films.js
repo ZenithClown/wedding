@@ -27,6 +27,59 @@
     });
   });
 
+  // --- Instagram embed modal ---
+  const igModal = document.getElementById("instagram-modal");
+  const igEmbed = document.getElementById("instagram-modal-embed");
+
+  function openInstagramModal(url) {
+    if (!igModal || !igEmbed) return;
+
+    igEmbed.innerHTML = `<blockquote class="instagram-media" data-instgrm-permalink="${url}" data-instgrm-version="14" style="margin:0 auto;max-width:540px;width:calc(100% - 2px);min-width:326px;"></blockquote>`;
+
+    igModal.hidden = false;
+    requestAnimationFrame(() => igModal.classList.add("is-open"));
+    document.body.style.overflow = "hidden";
+
+    if (window.instgrm) {
+      window.instgrm.Embeds.process();
+    } else if (!document.getElementById("instagram-embed-js")) {
+      const script = document.createElement("script");
+      script.id = "instagram-embed-js";
+      script.src = "//www.instagram.com/embed.js";
+      script.async = true;
+      document.body.appendChild(script);
+    }
+  }
+
+  function closeInstagramModal() {
+    igModal.classList.remove("is-open");
+    document.body.style.overflow = "";
+    setTimeout(() => {
+      igModal.hidden = true;
+      igEmbed.innerHTML = "";
+    }, 300);
+  }
+
+  if (igModal) {
+    igModal.querySelector(".instagram-modal__close").addEventListener("click", closeInstagramModal);
+    igModal.addEventListener("click", (e) => { if (e.target === igModal) closeInstagramModal(); });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !igModal.hidden) closeInstagramModal(); });
+  }
+
+  document.querySelectorAll("[data-instagram-url]").forEach((thumb) => {
+    thumb.addEventListener("click", function () {
+      const url = this.dataset.instagramUrl;
+      if (url) openInstagramModal(url);
+    });
+    thumb.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        const url = this.dataset.instagramUrl;
+        if (url) openInstagramModal(url);
+      }
+    });
+  });
+
   // --- Films Carousel (homepage mini slideshow) ---
   const carouselTrack = document.getElementById("films-carousel-track");
   if (carouselTrack) {

@@ -332,6 +332,78 @@
   background: var(--color-gold);
 }
 
+/* Instagram slide — distinguish play icon */
+.film-card__thumb--instagram .film-card__play-icon svg {
+  width: 22px;
+  height: 22px;
+  margin-left: 0;
+  stroke: var(--color-text);
+  fill: none;
+}
+
+/* --- Instagram embed modal --- */
+.instagram-modal {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-lightbox);
+  background: var(--color-overlay-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-6);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-base);
+}
+
+.instagram-modal.is-open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.instagram-modal__inner {
+  position: relative;
+  width: 100%;
+  max-width: 540px;
+  max-height: 90vh;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-gold-dark) transparent;
+}
+
+.instagram-modal__close {
+  position: fixed;
+  top: var(--space-6);
+  right: var(--space-6);
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid var(--color-border-light);
+  color: var(--color-text);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1;
+  transition:
+    border-color var(--transition-base),
+    color var(--transition-base);
+}
+
+.instagram-modal__close:hover {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+}
+
+.instagram-modal__close svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+}
+
 /* --- Responsive --- */
 @media (max-width: 1024px) {
   .films-grid {
