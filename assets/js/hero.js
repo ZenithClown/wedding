@@ -5,23 +5,6 @@
 (function () {
   "use strict";
 
-  // --- Fade out poster image once video plays ---
-  const video = document.querySelector(".hero__video");
-  const poster = document.querySelector(".hero__poster");
-
-  if (video && poster) {
-    video.addEventListener(
-      "playing",
-      () => {
-        poster.classList.add("hidden");
-      },
-      { once: true }
-    );
-
-    // Fallback: hide poster after 3s even if video doesn't fire
-    setTimeout(() => poster.classList.add("hidden"), 3000);
-  }
-
   // --- Scroll indicator ---
   const scrollBtn = document.querySelector(".hero__scroll");
   if (scrollBtn) {

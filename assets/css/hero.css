@@ -28,22 +28,6 @@
   object-position: center;
 }
 
-.hero__poster {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  z-index: 1;
-  transition: opacity 1.2s ease;
-}
-
-.hero__poster.hidden {
-  opacity: 0;
-  pointer-events: none;
-}
-
 /* --- Overlay --- */
 .hero__overlay {
   position: absolute;
