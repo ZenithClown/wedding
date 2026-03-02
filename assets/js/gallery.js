@@ -244,6 +244,9 @@
 
   if (!grid) return; // not a gallery page
 
+  // ---- Size-based masonry for all gallery pages -----------
+  grid.classList.add("gallery-grid--masonry");
+
   // ---- Build gallery item HTML ----------------------------
   function buildItem(img, index) {
     const item = document.createElement("div");
@@ -253,6 +256,16 @@
     item.setAttribute("role", "button");
     item.setAttribute("tabindex", "0");
     item.setAttribute("aria-label", `View photo: ${img.alt}`);
+
+    // Span portrait images across 2 rows based on actual dimensions
+    const match = img.thumb.match(/\/(\d+)\/(\d+)(?:\?.*)?$/);
+    if (match) {
+      const ratio = parseInt(match[1]) / parseInt(match[2]);
+      if (ratio < 0.85) {
+        item.classList.add("tall");
+        item.style.gridRow = "span 2";
+      }
+    }
 
     item.innerHTML = `
       <img

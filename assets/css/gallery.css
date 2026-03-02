@@ -56,9 +56,13 @@
   gap: 6px;
 }
 
-/* Tall/landscape variation for visual rhythm */
-.gallery-grid__item:nth-child(5n + 1) {
-  grid-row: span 2;
+/* Masonry layout — driven by image aspect ratio */
+.gallery-grid--masonry {
+  grid-auto-rows: 280px;
+}
+
+.gallery-grid--masonry .gallery-grid__item {
+  aspect-ratio: unset;
 }
 
 .gallery-grid__item {
@@ -374,8 +378,8 @@
     gap: 4px;
   }
 
-  .gallery-grid__item:nth-child(5n + 1) {
-    grid-row: unset;
+  .gallery-grid--masonry {
+    grid-auto-rows: 220px;
   }
 
   .filter-bar {
@@ -402,5 +406,9 @@
 @media (max-width: 480px) {
   .gallery-grid {
     grid-template-columns: 1fr;
+  }
+
+  .gallery-grid--masonry .gallery-grid__item {
+    grid-row: unset !important;
   }
 }

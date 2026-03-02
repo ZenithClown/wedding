@@ -14,15 +14,15 @@
     "caption": "Sandy Shores"
   },
   {
-    "src": "https://picsum.photos/seed/cs3/1200/800",
-    "thumb": "https://picsum.photos/seed/cs3/600/400",
-    "alt": "City couple portrait",
+    "src": "https://picsum.photos/seed/cs3/1600/900",
+    "thumb": "https://picsum.photos/seed/cs3/800/450",
+    "alt": "City couple wide shot",
     "category": "city",
     "caption": "City of Love"
   },
   {
-    "src": "https://picsum.photos/seed/cs4/1200/800",
-    "thumb": "https://picsum.photos/seed/cs4/600/400",
+    "src": "https://picsum.photos/seed/cs4/900/900",
+    "thumb": "https://picsum.photos/seed/cs4/450/450",
     "alt": "Night city lights",
     "category": "city",
     "caption": "Night Lights"
@@ -42,16 +42,16 @@
     "caption": "Golden Fields"
   },
   {
-    "src": "https://picsum.photos/seed/cs7/1200/800",
-    "thumb": "https://picsum.photos/seed/cs7/600/400",
-    "alt": "Studio dramatic portrait",
+    "src": "https://picsum.photos/seed/cs7/1600/900",
+    "thumb": "https://picsum.photos/seed/cs7/800/450",
+    "alt": "Studio dramatic wide",
     "category": "studio",
     "caption": "Studio Light"
   },
   {
-    "src": "https://picsum.photos/seed/cs8/1200/800",
-    "thumb": "https://picsum.photos/seed/cs8/600/400",
-    "alt": "Beach golden hour",
+    "src": "https://picsum.photos/seed/cs8/800/1100",
+    "thumb": "https://picsum.photos/seed/cs8/400/550",
+    "alt": "Beach golden hour portrait",
     "category": "beach",
     "caption": "Golden Hour"
   },
@@ -63,9 +63,9 @@
     "caption": "Urban Romance"
   },
   {
-    "src": "https://picsum.photos/seed/cs10/1200/800",
-    "thumb": "https://picsum.photos/seed/cs10/600/400",
-    "alt": "Waterfall couple",
+    "src": "https://picsum.photos/seed/cs10/900/900",
+    "thumb": "https://picsum.photos/seed/cs10/450/450",
+    "alt": "Waterfall couple square",
     "category": "nature",
     "caption": "By the Waterfall"
   },
@@ -84,16 +84,16 @@
     "caption": "Mountain Top"
   },
   {
-    "src": "https://picsum.photos/seed/cs13/1200/800",
-    "thumb": "https://picsum.photos/seed/cs13/600/400",
-    "alt": "Couple laughing beach",
+    "src": "https://picsum.photos/seed/cs13/800/1100",
+    "thumb": "https://picsum.photos/seed/cs13/400/550",
+    "alt": "Couple laughing beach portrait",
     "category": "beach",
     "caption": "Pure Laughter"
   },
   {
-    "src": "https://picsum.photos/seed/cs14/1200/800",
-    "thumb": "https://picsum.photos/seed/cs14/600/400",
-    "alt": "Rooftop city portrait",
+    "src": "https://picsum.photos/seed/cs14/1600/900",
+    "thumb": "https://picsum.photos/seed/cs14/800/450",
+    "alt": "Rooftop city panoramic",
     "category": "city",
     "caption": "Rooftop Dreams"
   },
@@ -119,16 +119,16 @@
     "caption": "Sunset Kiss"
   },
   {
-    "src": "https://picsum.photos/seed/cs18/1200/800",
-    "thumb": "https://picsum.photos/seed/cs18/600/400",
-    "alt": "City bridge couple",
+    "src": "https://picsum.photos/seed/cs18/900/900",
+    "thumb": "https://picsum.photos/seed/cs18/450/450",
+    "alt": "City bridge couple square",
     "category": "city",
     "caption": "Bridge of Sighs"
   },
   {
-    "src": "https://picsum.photos/seed/cs19/1200/800",
-    "thumb": "https://picsum.photos/seed/cs19/600/400",
-    "alt": "Lake side couple",
+    "src": "https://picsum.photos/seed/cs19/800/1100",
+    "thumb": "https://picsum.photos/seed/cs19/400/550",
+    "alt": "Lake side couple portrait",
     "category": "nature",
     "caption": "Still Waters"
   },
