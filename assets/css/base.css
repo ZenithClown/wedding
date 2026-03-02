@@ -333,17 +333,20 @@ body.lightbox-open {
   transform: translateY(10px);
   transition:
     opacity var(--transition-base),
-    transform var(--transition-base);
+    transform var(--transition-base),
+    background var(--transition-base),
+    border-color var(--transition-base);
   z-index: var(--z-nav);
 }
 
 #scroll-top.visible {
-  opacity: 1;
+  opacity: 0.15;
   pointer-events: auto;
   transform: translateY(0);
 }
 
 #scroll-top:hover {
+  opacity: 0.6;
   background: var(--color-gold);
   color: var(--color-bg);
   border-color: var(--color-gold);
