@@ -226,7 +226,7 @@ Load order is **mandatory** on every page:
 
 ```
 variables.css → reset.css → base.css → animations.css → navbar.css
-→ hero.css (index.html only) → gallery.css → films.css → footer.css
+→ hero.css (index.html only) → gallery.css → footer.css
 ```
 
 - Design tokens live **exclusively** in `variables.css`. Never duplicate or override tokens inline.
@@ -245,7 +245,6 @@ variables.css → reset.css → base.css → animations.css → navbar.css
 | `navbar.js` | Scroll shrink (`.scrolled` at 80 px), mobile drawer (`.nav-open` on `<body>`), active link highlight, reveal IntersectionObserver |
 | `hero.js` | Video poster fade, scroll-chevron click, animated counters (`data-counter` attr) |
 | `gallery.js` | Infinite scroll (IntersectionObserver on `.load-more-trigger`), lightbox, category filter, `GALLERY_OVERRIDE` support |
-| `films.js` | Lazy YouTube embed — click on `[data-youtube-id]` swaps to `<iframe>` |
 | `scroll-top.js` | Show/hide button after 300 px, smooth scroll to top |
 
 ### 4.4 Key Interaction Patterns

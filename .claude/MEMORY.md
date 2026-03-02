@@ -17,10 +17,9 @@ NOT a photography studio site — no business copy, no services, no pricing, no 
 - Fonts: `Cormorant Garamond` (headings, italic) + `Lato` (body, nav) via Google Fonts
 - Max width: 1500px · Desktop gutter: 4vw · Mobile gutter: 6vw
 
-## Pages (6 total — ALL BUILT)
-- `index.html` — Home: video hero, quote, gallery preview (6 imgs), films preview (featured+3), pre-wedding preview (3)
+## Pages (5 total — ALL BUILT)
+- `index.html` — Home: video hero, quote, gallery preview (6 imgs), films/video slideshow (featured + carousel + Instagram modal), pre-wedding preview (3)
 - `gallery.html` — Full gallery: infinite scroll, filter (All/Ceremony/Reception/Portraits/Details/Candid), lightbox
-- `videography.html` — Featured film (large) + 6 film cards in 3-col grid, lazy YouTube embed
 - `prewedding.html` — Gallery with GALLERY_OVERRIDE from `_data/gallery_prewedding.json`, filter (All/Beach/City/Nature/Studio)
 - `collages.html` — Group Photos gallery with GALLERY_OVERRIDE from `_data/gallery_collages.json`, filter (All/Family/Friends/Bridal Party)
 - `404.html` — Custom 404 with couple branding
@@ -43,9 +42,9 @@ Gemfile                   ← gem "github-pages"
 
 ## Key Front Matter Variables (per page)
 - `layout: default` — always default
-- `nav_active: home|gallery|videography|prewedding|collages` — sets active class in mobile drawer
-- `extra_css: [hero, gallery, films]` — page-specific CSS loaded between navbar.css and footer.css
-- `extra_js: [hero, gallery, films]` — page-specific JS loaded after navbar.js
+- `nav_active: home|gallery|prewedding|collages` — sets active class in mobile drawer
+- `extra_css: [hero, gallery]` — page-specific CSS loaded between navbar.css and footer.css
+- `extra_js: [hero, gallery]` — page-specific JS loaded after navbar.js
 - `gallery_data: gallery_prewedding|gallery_collages` — key in _data/ for GALLERY_OVERRIDE
 - `couple_shoot_mode: true` — sets window.COUPLE_SHOOT_MODE = true in <head> (prewedding only)
 - `navbar_scrolled: true` — adds scrolled class to navbar (404 only)
@@ -55,13 +54,13 @@ Gemfile                   ← gem "github-pages"
 
 ## CSS Files (9 files — ALL BUILT)
 variables.css → reset.css → base.css → animations.css → navbar.css → [extra_css] → footer.css
-hero.css and gallery.css and films.css are loaded via `extra_css` front matter list.
+hero.css, gallery.css, and films.css are loaded via `extra_css` front matter list (index.html uses all three).
 
 ## JS Files (5 files — ALL BUILT)
 - navbar.js — Scroll shrink, mobile drawer, active link, reveal IntersectionObserver
 - hero.js — Video poster fade, scroll chevron click, animated counters (data-counter attr)
 - gallery.js — Infinite scroll (IntersectionObserver sentinel), lightbox, filter, GALLERY_OVERRIDE support, touch swipe
-- films.js — Lazy YouTube embed (data-youtube-id attr on thumb div, click swaps to iframe)
+- films.js — Lazy YouTube embed + films carousel + Instagram modal (index.html only)
 - scroll-top.js — Show/hide + smooth scroll
 
 ## Key Patterns
@@ -96,4 +95,4 @@ Place hero video at `./assets/video/hero.mp4` (under 15MB).
 Update `data-youtube-id` values with real YouTube video IDs.
 
 ## Page File Names (canonical)
-- `index.html` · `gallery.html` · `videography.html` · `prewedding.html` · `collages.html` · `404.html`
+- `index.html` · `gallery.html` · `prewedding.html` · `collages.html` · `404.html`
