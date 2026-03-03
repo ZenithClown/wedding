@@ -84,7 +84,7 @@
 /* --- Right: Social links (right column) --- */
 .footer__social {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: var(--space-3);
   align-self: center;
   padding-left: var(--space-8);
