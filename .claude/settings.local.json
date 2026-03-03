@@ -2,8 +2,9 @@
   "permissions": {
     "allow": [
       "Bash(npx prettier --write \"**/*.html\" \"assets/css/**/*.css\" \"assets/js/**/*.js\")",
-      "Bash(git add*)",
-      "Bash(git commit*)"
+      "Bash(cd \"e:/Personal Projects/website\" && git status*)",
+      "Bash(cd \"e:/Personal Projects/website\" && git log*)",
+      "Bash(cd \"e:/Personal Projects/website\" && git add*)"
     ]
   }
 }
