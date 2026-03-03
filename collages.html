@@ -32,14 +32,44 @@ gallery_data: gallery_collages
         </p>
       </header>
 
-      <!-- Filter Bar -->
-      <div class="filter-bar" role="tablist" aria-label="Filter photos by group">
-        <button class="filter-bar__btn active" data-filter="all" role="tab" aria-selected="true">All</button>
-        <button class="filter-bar__btn" data-filter="family" role="tab" aria-selected="false">Family</button>
-        <button class="filter-bar__btn" data-filter="friends" role="tab" aria-selected="false">Friends</button>
-        <button class="filter-bar__btn" data-filter="bridal-party" role="tab" aria-selected="false">
-          Bridal Party
-        </button>
+      <!-- Filter Bar — dropdowns (sections from _data/sections.json; names & locations from gallery.js) -->
+      <div class="filter-bar filter-bar--dropdowns" role="group" aria-label="Filter group photos">
+        <div class="filter-dropdown" data-filter-type="section">
+          <button class="filter-dropdown__trigger" aria-haspopup="listbox" aria-expanded="false">
+            <span class="filter-dropdown__label">Section</span>
+            <span class="filter-dropdown__value">All</span>
+            <svg class="filter-dropdown__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <ul class="filter-dropdown__list" role="listbox" aria-label="Section options">
+            <li class="filter-dropdown__option active" data-filter="all" role="option" aria-selected="true">All</li>
+            {% for section in site.data.sections.collages %}
+            <li class="filter-dropdown__option" data-filter="{{ section | downcase }}" role="option" aria-selected="false">{{ section | capitalize }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+
+        <div class="filter-dropdown filter-dropdown--names filter-dropdown--multi" data-filter-type="name">
+          <button class="filter-dropdown__trigger" aria-haspopup="listbox" aria-expanded="false">
+            <span class="filter-dropdown__label">By Name</span>
+            <span class="filter-dropdown__value">All</span>
+            <svg class="filter-dropdown__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <ul class="filter-dropdown__list" role="listbox" aria-label="Name options">
+            <!-- gallery.js injects options -->
+          </ul>
+        </div>
+
+        <div class="filter-dropdown filter-dropdown--locations filter-dropdown--multi" data-filter-type="location">
+          <button class="filter-dropdown__trigger" aria-haspopup="listbox" aria-expanded="false">
+            <span class="filter-dropdown__label">By Location</span>
+            <span class="filter-dropdown__value">All</span>
+            <svg class="filter-dropdown__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <ul class="filter-dropdown__list" role="listbox" aria-label="Location options">
+            <!-- gallery.js injects options -->
+          </ul>
+        </div>
+
         <span class="filter-bar__count" aria-live="polite">Loading…</span>
       </div>
 

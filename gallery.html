@@ -30,14 +30,12 @@ extra_js: [gallery]
         </p>
       </header>
 
-      <!-- Filter Bar -->
+      <!-- Filter Bar (sections driven by _data/sections.json) -->
       <div class="filter-bar" role="tablist" aria-label="Filter photos by category">
         <button class="filter-bar__btn active" data-filter="all" role="tab" aria-selected="true">All</button>
-        <button class="filter-bar__btn" data-filter="ceremony" role="tab" aria-selected="false">Ceremony</button>
-        <button class="filter-bar__btn" data-filter="reception" role="tab" aria-selected="false">Reception</button>
-        <button class="filter-bar__btn" data-filter="portraits" role="tab" aria-selected="false">Portraits</button>
-        <button class="filter-bar__btn" data-filter="details" role="tab" aria-selected="false">Details</button>
-        <button class="filter-bar__btn" data-filter="candid" role="tab" aria-selected="false">Candid</button>
+        {% for section in site.data.sections.gallery %}
+        <button class="filter-bar__btn" data-filter="{{ section | downcase }}" role="tab" aria-selected="false">{{ section | capitalize }}</button>
+        {% endfor %}
         <span class="filter-bar__count" aria-live="polite">Loading…</span>
       </div>
 

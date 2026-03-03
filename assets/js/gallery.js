@@ -358,27 +358,164 @@
   }
 
   // ---- Category filter ------------------------------------
-  filterBtns.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const cat = btn.dataset.filter;
-      if (cat === activeCategory) return;
+  // Collages mode: multi-dimensional AND filter via dropdowns (section + name + location)
+  // Standard mode: single-category filter (gallery.html)
+  const namesDropdown = document.querySelector(".filter-dropdown--names");
+  const locationsDropdown = document.querySelector(".filter-dropdown--locations");
 
-      activeCategory = cat;
-      filterBtns.forEach((b) => b.classList.remove("active"));
-      btn.classList.add("active");
+  if (namesDropdown && locationsDropdown) {
+    // COLLAGES MODE — section: single-select | name & location: multi-select
+    let activeSection = "all";
+    let activeNames = new Set(); // empty = all names
+    let activeLocations = new Set(); // empty = all locations
 
-      // Reset
+    // Extract unique names and locations from data
+    const allNames = [...new Set(SOURCE_DATA.flatMap((img) => img.names || []))].sort();
+    const allLocations = [...new Set(SOURCE_DATA.map((img) => img.location).filter(Boolean))].sort();
+
+    function makeOption(label, value) {
+      const li = document.createElement("li");
+      li.className = "filter-dropdown__option" + (value === "all" ? " active" : "");
+      li.dataset.filter = value;
+      li.setAttribute("role", "option");
+      li.setAttribute("aria-selected", value === "all" ? "true" : "false");
+      li.textContent = label;
+      return li;
+    }
+
+    // Populate names list
+    const namesList = namesDropdown.querySelector(".filter-dropdown__list");
+    if (allNames.length && namesList) {
+      namesList.appendChild(makeOption("All", "all"));
+      allNames.forEach((name) => namesList.appendChild(makeOption(name, name)));
+    } else {
+      namesDropdown.style.display = "none";
+    }
+
+    // Populate locations list
+    const locationsList = locationsDropdown.querySelector(".filter-dropdown__list");
+    if (allLocations.length && locationsList) {
+      locationsList.appendChild(makeOption("All", "all"));
+      allLocations.forEach((loc) => locationsList.appendChild(makeOption(loc, loc)));
+    } else {
+      locationsDropdown.style.display = "none";
+    }
+
+    // Open / close dropdown
+    function closeAll() {
+      document.querySelectorAll(".filter-dropdown.open").forEach((d) => {
+        d.classList.remove("open");
+        d.querySelector(".filter-dropdown__trigger").setAttribute("aria-expanded", "false");
+      });
+    }
+
+    document.querySelectorAll(".filter-dropdown__trigger").forEach((trigger) => {
+      trigger.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const dropdown = trigger.closest(".filter-dropdown");
+        const isOpen = dropdown.classList.contains("open");
+        closeAll();
+        if (!isOpen) {
+          dropdown.classList.add("open");
+          trigger.setAttribute("aria-expanded", "true");
+        }
+      });
+      trigger.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeAll();
+      });
+    });
+
+    document.addEventListener("click", closeAll);
+
+    function applyFilter() {
       grid.innerHTML = "";
       loadedCount = 0;
-
-      filteredImages = cat === "all" ? [...allImages] : allImages.filter((img) => img.category === cat);
-
+      filteredImages = allImages.filter((img) => {
+        const sectionOk = activeSection === "all" || img.category === activeSection;
+        const nameOk = activeNames.size === 0 || (img.names && img.names.some((n) => activeNames.has(n)));
+        const locationOk = activeLocations.size === 0 || activeLocations.has(img.location);
+        return sectionOk && nameOk && locationOk;
+      });
       sentinel && (sentinel.style.display = "");
       sentinel && (sentinel.innerHTML = "");
-
       loadBatch();
+    }
+
+    // Sync a multi-select dropdown's option states and trigger label
+    function syncMulti(dropdown, activeSet) {
+      const isAll = activeSet.size === 0;
+      dropdown.querySelectorAll(".filter-dropdown__option").forEach((opt) => {
+        const sel = opt.dataset.filter === "all" ? isAll : activeSet.has(opt.dataset.filter);
+        opt.classList.toggle("active", sel);
+        opt.setAttribute("aria-selected", sel ? "true" : "false");
+      });
+      const valueEl = dropdown.querySelector(".filter-dropdown__value");
+      if (valueEl) {
+        if (isAll) valueEl.textContent = "All";
+        else if (activeSet.size === 1) valueEl.textContent = [...activeSet][0];
+        else valueEl.textContent = `${activeSet.size} selected`;
+      }
+      dropdown.querySelector(".filter-dropdown__trigger").classList.toggle("active", !isAll);
+    }
+
+    // Handle option clicks for all three dropdowns
+    document.querySelectorAll(".filter-dropdown").forEach((dropdown) => {
+      const type = dropdown.dataset.filterType;
+      dropdown.addEventListener("click", (e) => {
+        const option = e.target.closest(".filter-dropdown__option");
+        if (!option) return;
+        const val = option.dataset.filter;
+
+        if (type === "section") {
+          // Single-select: update state, sync UI, close
+          activeSection = val;
+          dropdown.querySelectorAll(".filter-dropdown__option").forEach((opt) => {
+            const sel = opt.dataset.filter === val;
+            opt.classList.toggle("active", sel);
+            opt.setAttribute("aria-selected", sel ? "true" : "false");
+          });
+          const valueEl = dropdown.querySelector(".filter-dropdown__value");
+          if (valueEl) valueEl.textContent = option.textContent;
+          dropdown.querySelector(".filter-dropdown__trigger").classList.toggle("active", val !== "all");
+          closeAll();
+        } else {
+          // Multi-select: toggle, stay open
+          const activeSet = type === "name" ? activeNames : activeLocations;
+          if (val === "all") {
+            activeSet.clear();
+          } else {
+            activeSet.has(val) ? activeSet.delete(val) : activeSet.add(val);
+          }
+          syncMulti(dropdown, activeSet);
+        }
+
+        applyFilter();
+      });
     });
-  });
+  } else {
+    // STANDARD MODE (gallery.html): single-category filter
+    filterBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const cat = btn.dataset.filter;
+        if (cat === activeCategory) return;
+
+        activeCategory = cat;
+        filterBtns.forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        // Reset
+        grid.innerHTML = "";
+        loadedCount = 0;
+
+        filteredImages = cat === "all" ? [...allImages] : allImages.filter((img) => img.category === cat);
+
+        sentinel && (sentinel.style.display = "");
+        sentinel && (sentinel.innerHTML = "");
+
+        loadBatch();
+      });
+    });
+  }
 
   // ---- Initial load ----------------------------------------
   loadBatch();

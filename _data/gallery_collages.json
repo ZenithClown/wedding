@@ -4,139 +4,179 @@
     "thumb": "https://picsum.photos/seed/grp1/600/400",
     "alt": "Family portrait",
     "category": "family",
-    "caption": "The Families Together"
+    "caption": "The Families Together",
+    "names": ["Debmalya", "Ankita", "Rajan", "Mita", "Suresh", "Priya"],
+    "location": "Main Mandap"
   },
   {
     "src": "https://picsum.photos/seed/grp2/1200/800",
     "thumb": "https://picsum.photos/seed/grp2/600/400",
     "alt": "Bride with bridesmaids",
     "category": "bridal-party",
-    "caption": "Bridal Squad"
+    "caption": "Bridal Squad",
+    "names": ["Ankita", "Kavya", "Neha", "Shreya"],
+    "location": "Garden Lawn"
   },
   {
     "src": "https://picsum.photos/seed/grp3/1200/800",
     "thumb": "https://picsum.photos/seed/grp3/600/400",
     "alt": "Groom with groomsmen",
     "category": "bridal-party",
-    "caption": "The Groomsmen"
+    "caption": "The Groomsmen",
+    "names": ["Debmalya", "Arjun", "Rohit", "Arnav"],
+    "location": "Garden Lawn"
   },
   {
     "src": "https://picsum.photos/seed/grp4/1200/800",
     "thumb": "https://picsum.photos/seed/grp4/600/400",
     "alt": "Friends group photo",
     "category": "friends",
-    "caption": "Our People"
+    "caption": "Our People",
+    "names": ["Arjun", "Rohit", "Kavya", "Neha", "Arnav", "Shreya"],
+    "location": "Reception Hall"
   },
   {
     "src": "https://picsum.photos/seed/grp5/800/1200",
     "thumb": "https://picsum.photos/seed/grp5/400/600",
     "alt": "Parents and couple",
     "category": "family",
-    "caption": "With Our Parents"
+    "caption": "With Our Parents",
+    "names": ["Debmalya", "Ankita", "Rajan", "Mita", "Suresh", "Priya"],
+    "location": "Main Mandap"
   },
   {
     "src": "https://picsum.photos/seed/grp6/1200/800",
     "thumb": "https://picsum.photos/seed/grp6/600/400",
     "alt": "College friends reunion",
     "category": "friends",
-    "caption": "Old Friends, New Memories"
+    "caption": "Old Friends, New Memories",
+    "names": ["Debmalya", "Arjun", "Rohit", "Arnav"],
+    "location": "Garden Lawn"
   },
   {
     "src": "https://picsum.photos/seed/grp7/1200/800",
     "thumb": "https://picsum.photos/seed/grp7/600/400",
     "alt": "Full bridal party",
     "category": "bridal-party",
-    "caption": "The Full Party"
+    "caption": "The Full Party",
+    "names": ["Debmalya", "Ankita", "Arjun", "Rohit", "Kavya", "Neha", "Arnav", "Shreya"],
+    "location": "Main Mandap"
   },
   {
     "src": "https://picsum.photos/seed/grp8/800/1200",
     "thumb": "https://picsum.photos/seed/grp8/400/600",
     "alt": "Extended family portrait",
     "category": "family",
-    "caption": "All of Us"
+    "caption": "All of Us",
+    "names": ["Debmalya", "Ankita", "Rajan", "Mita", "Suresh", "Priya", "Rina", "Suman"],
+    "location": "Courtyard"
   },
   {
     "src": "https://picsum.photos/seed/grp9/1200/800",
     "thumb": "https://picsum.photos/seed/grp9/600/400",
     "alt": "Friends candid moment",
     "category": "friends",
-    "caption": "Pure Joy"
+    "caption": "Pure Joy",
+    "names": ["Ankita", "Kavya", "Neha", "Shreya"],
+    "location": "Reception Hall"
   },
   {
     "src": "https://picsum.photos/seed/grp10/1200/800",
     "thumb": "https://picsum.photos/seed/grp10/600/400",
     "alt": "Bride family portrait",
     "category": "family",
-    "caption": "Bride's Family"
+    "caption": "Bride's Family",
+    "names": ["Ankita", "Suresh", "Priya", "Rina"],
+    "location": "Main Mandap"
   },
   {
     "src": "https://picsum.photos/seed/grp11/1200/800",
     "thumb": "https://picsum.photos/seed/grp11/600/400",
     "alt": "Groom family portrait",
     "category": "family",
-    "caption": "Groom's Family"
+    "caption": "Groom's Family",
+    "names": ["Debmalya", "Rajan", "Mita", "Suman"],
+    "location": "Main Mandap"
   },
   {
     "src": "https://picsum.photos/seed/grp12/800/1200",
     "thumb": "https://picsum.photos/seed/grp12/400/600",
     "alt": "Bridesmaids candid",
     "category": "bridal-party",
-    "caption": "Bridesmaids"
+    "caption": "Bridesmaids",
+    "names": ["Kavya", "Neha", "Shreya"],
+    "location": "Garden Lawn"
   },
   {
     "src": "https://picsum.photos/seed/grp13/1200/800",
     "thumb": "https://picsum.photos/seed/grp13/600/400",
     "alt": "Childhood friends together",
     "category": "friends",
-    "caption": "Childhood to Forever"
+    "caption": "Childhood to Forever",
+    "names": ["Debmalya", "Arjun", "Rohit"],
+    "location": "Courtyard"
   },
   {
     "src": "https://picsum.photos/seed/grp14/1200/800",
     "thumb": "https://picsum.photos/seed/grp14/600/400",
     "alt": "Groomsmen candid laugh",
     "category": "bridal-party",
-    "caption": "The Boys"
+    "caption": "The Boys",
+    "names": ["Arjun", "Rohit", "Arnav"],
+    "location": "Garden Lawn"
   },
   {
     "src": "https://picsum.photos/seed/grp15/1200/800",
     "thumb": "https://picsum.photos/seed/grp15/600/400",
     "alt": "Full family gathering",
     "category": "family",
-    "caption": "One Big Family"
+    "caption": "One Big Family",
+    "names": ["Debmalya", "Ankita", "Rajan", "Mita", "Suresh", "Priya", "Rina", "Suman"],
+    "location": "Courtyard"
   },
   {
     "src": "https://picsum.photos/seed/grp16/800/1200",
     "thumb": "https://picsum.photos/seed/grp16/400/600",
     "alt": "Friends dancing reception",
     "category": "friends",
-    "caption": "Dance Floor Friends"
+    "caption": "Dance Floor Friends",
+    "names": ["Arjun", "Kavya", "Arnav", "Shreya"],
+    "location": "Reception Hall"
   },
   {
     "src": "https://picsum.photos/seed/grp17/1200/800",
     "thumb": "https://picsum.photos/seed/grp17/600/400",
     "alt": "Bridal party at ceremony steps",
     "category": "bridal-party",
-    "caption": "At the Steps"
+    "caption": "At the Steps",
+    "names": ["Debmalya", "Ankita", "Arjun", "Kavya"],
+    "location": "Main Mandap"
   },
   {
     "src": "https://picsum.photos/seed/grp18/1200/800",
     "thumb": "https://picsum.photos/seed/grp18/600/400",
     "alt": "Cousins group photo",
     "category": "family",
-    "caption": "Cousins"
+    "caption": "Cousins",
+    "names": ["Rina", "Suman", "Neha"],
+    "location": "Courtyard"
   },
   {
     "src": "https://picsum.photos/seed/grp19/1200/800",
     "thumb": "https://picsum.photos/seed/grp19/600/400",
     "alt": "Work friends group",
     "category": "friends",
-    "caption": "Our Crew"
+    "caption": "Our Crew",
+    "names": ["Ankita", "Rohit", "Neha", "Shreya"],
+    "location": "Reception Hall"
   },
   {
     "src": "https://picsum.photos/seed/grp20/1200/800",
     "thumb": "https://picsum.photos/seed/grp20/600/400",
     "alt": "Entire wedding party",
     "category": "bridal-party",
-    "caption": "Together"
+    "caption": "Together",
+    "names": ["Debmalya", "Ankita", "Arjun", "Rohit", "Kavya", "Neha", "Arnav", "Shreya"],
+    "location": "Garden Lawn"
   }
 ]
