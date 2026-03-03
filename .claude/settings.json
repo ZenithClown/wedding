@@ -20,6 +20,16 @@
           "format", "prettier", "prettify", "lint-fix", "tidy", "style", "reformat", "beautify"
         ],
         "always_load": false
+      },
+      {
+        "name": "commiter",
+        "description": "Automates git commit workflow: inspect working tree, stage relevant files, write a structured commit message with emoji convention, commit, and verify. Use when asked to commit, create a git commit, or save changes to git.",
+        "skill_path": ".claude/skills/commiter/SKILL.md",
+        "trigger_keywords": [
+          "commit", "git commit", "create commit", "save changes", "stage and commit",
+          "detailed commit", "short commit", "commit workflow"
+        ],
+        "always_load": false
       }
     ]
   }
