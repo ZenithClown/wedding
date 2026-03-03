@@ -116,6 +116,15 @@
   background: #000;
 }
 
+/* Playing state — remove hover overlay so YouTube controls are not blocked */
+.film-card__thumb.playing::after {
+  content: none;
+}
+.film-card__thumb.playing:hover img {
+  transform: none;
+  filter: none;
+}
+
 /* --- Card info --- */
 .film-card__info {
   display: flex;

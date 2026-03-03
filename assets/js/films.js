@@ -8,12 +8,16 @@
   // All film card thumbnails and featured thumbs
   document.querySelectorAll("[data-youtube-id]").forEach((thumb) => {
     thumb.addEventListener("click", function () {
+      // Already playing — don't recreate the iframe (would restart from beginning)
+      if (this.classList.contains("playing")) return;
+
       const videoId = this.dataset.youtubeId;
       if (!videoId) return;
 
       const iframe = document.createElement("iframe");
       iframe.className = "film-card__iframe";
-      iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1&color=white`;
+      // origin= is required for YouTube to allow embedding from localhost and custom domains
+      iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1&color=white&enablejsapi=1&origin=${encodeURIComponent(window.location.origin)}`;
       iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
       iframe.allowFullscreen = true;
       iframe.setAttribute("loading", "lazy");
