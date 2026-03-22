@@ -10,14 +10,8 @@ extra_css: [gallery]
 extra_js: [gallery]
 ---
 
-<!-- PAGE HERO BANNER -->
-{% include page-hero.html
-  aria_label="Wedding Stories"
-  bg_url="./assets/thumbnails/wedding.jpg"
-  label="Our Gallery"
-  title_plain="Wedding"
-  title_em="Stories"
-%}
+{% include page-hero.html aria_label="Wedding Stories" bg_url="./assets/thumbnails/wedding.jpg" label="Our Gallery"
+title_plain="Wedding" title_em="Stories" %}
 
 <main id="main-content">
   <section class="section" aria-labelledby="stories-title">
@@ -30,19 +24,19 @@ extra_js: [gallery]
         </p>
       </header>
 
-      <!-- Filter Bar (sections driven by _data/sections.json) -->
+      <!-- Filter buttons driven by _data/sections.json gallery array -->
       <div class="filter-bar" role="tablist" aria-label="Filter photos by category">
         <button class="filter-bar__btn active" data-filter="all" role="tab" aria-selected="true">All</button>
         {% for section in site.data.sections.gallery %}
-        <button class="filter-bar__btn" data-filter="{{ section | downcase }}" role="tab" aria-selected="false">{{ section | capitalize }}</button>
+        <button class="filter-bar__btn" data-filter="{{ section | downcase }}" role="tab" aria-selected="false">
+          {{ section | capitalize }}
+        </button>
         {% endfor %}
         <span class="filter-bar__count" aria-live="polite">Loading…</span>
       </div>
 
-      <!-- Gallery Grid (populated by gallery.js) -->
       <div class="gallery-grid" role="list" aria-label="Wedding photo gallery"></div>
 
-      <!-- Infinite scroll sentinel -->
       <div class="load-more-trigger" aria-label="Loading more photos"></div>
     </div>
   </section>

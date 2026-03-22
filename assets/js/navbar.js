@@ -1,7 +1,3 @@
-/* ============================================================
-   NAVBAR — Scroll shrink, mobile drawer, active link
-   ============================================================ */
-
 (function () {
   "use strict";
 
@@ -10,26 +6,19 @@
   const drawer = document.querySelector(".nav-drawer");
   const overlay = document.querySelector(".nav-drawer__overlay");
   const body = document.body;
-  const SCROLL_THRESHOLD = 80;
 
-  // --- Scroll: shrink navbar ---
   function onScroll() {
-    if (window.scrollY > SCROLL_THRESHOLD) {
-      navbar.classList.add("scrolled");
-    } else {
-      navbar.classList.remove("scrolled");
-    }
+    navbar.classList.toggle("scrolled", window.scrollY > 80);
   }
 
   window.addEventListener("scroll", onScroll, { passive: true });
-  onScroll(); // run on load
+  onScroll();
 
-  // --- Mobile drawer toggle ---
   function openDrawer() {
     body.classList.add("nav-open");
     hamburger.setAttribute("aria-expanded", "true");
     hamburger.setAttribute("aria-label", "Close navigation");
-    // Focus trap: first drawer link
+    // Focus first drawer link for keyboard accessibility
     const firstLink = drawer.querySelector(".nav-drawer__link");
     if (firstLink) firstLink.focus();
   }
@@ -46,26 +35,18 @@
     });
   }
 
-  if (overlay) {
-    overlay.addEventListener("click", closeDrawer);
-  }
+  if (overlay) overlay.addEventListener("click", closeDrawer);
 
-  // Close on Escape
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && body.classList.contains("nav-open")) {
-      closeDrawer();
-    }
+    if (e.key === "Escape" && body.classList.contains("nav-open")) closeDrawer();
   });
 
-  // Close drawer when a link is clicked
   drawer &&
     drawer.querySelectorAll(".nav-drawer__link").forEach((link) => {
       link.addEventListener("click", closeDrawer);
     });
 
-  // --- Active link highlighting ---
   const currentPath = window.location.pathname.split("/").pop() || "index.html";
-
   document.querySelectorAll(".navbar__link, .nav-drawer__link").forEach((link) => {
     const href = link.getAttribute("href");
     if (!href) return;
@@ -76,9 +57,7 @@
     }
   });
 
-  // --- Reveal on scroll (shared IntersectionObserver) ---
   const revealEls = document.querySelectorAll(".reveal, .reveal--left, .reveal--right, .reveal--scale");
-
   if (revealEls.length) {
     const revealObserver = new IntersectionObserver(
       (entries) => {
@@ -91,7 +70,6 @@
       },
       { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
     );
-
     revealEls.forEach((el) => revealObserver.observe(el));
   }
 })();

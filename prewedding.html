@@ -12,15 +12,8 @@ couple_shoot_mode: true
 gallery_data: gallery_prewedding
 ---
 
-<!-- PAGE HERO BANNER -->
-{% include page-hero.html
-  aria_label="Pre-Wedding Shoot"
-  bg_url="./assets/thumbnails/prewedding.jpg"
-  label="Before the Big Day"
-  title_plain="Pre-Wedding"
-  title_em="Shoot"
-  align="right"
-%}
+{% include page-hero.html aria_label="Pre-Wedding Shoot" bg_url="./assets/thumbnails/prewedding.jpg" label="Before the
+Big Day" title_plain="Pre-Wedding" title_em="Shoot" align="right" %}
 
 <main id="main-content">
   <section class="section" aria-labelledby="couple-title">
@@ -36,10 +29,8 @@ gallery_data: gallery_prewedding
 
       <hr style="border: none; border-top: 1px solid var(--color-border); margin: 2rem 0" />
 
-      <!-- Gallery Grid (populated by gallery.js using GALLERY_OVERRIDE) -->
       <div class="gallery-grid" role="list" aria-label="Pre-wedding photo gallery"></div>
 
-      <!-- Infinite scroll sentinel -->
       <div class="load-more-trigger" aria-label="Loading more photos"></div>
     </div>
   </section>

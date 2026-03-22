@@ -10,21 +10,10 @@ extra_css: [hero, gallery, films]
 extra_js: [hero, films]
 ---
 
-<!-- ============================================================
- HERO — Video Landing
- ============================================================ -->
 <main id="main-content">
   <section class="hero" aria-label="Hero">
     <div class="hero__video-wrap" aria-hidden="true">
-      <video
-        class="hero__video"
-        autoplay
-        muted
-        loop
-        playsinline
-        preload="metadata"
-        aria-hidden="true"
-      >
+      <video class="hero__video" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
         <source src="./assets/video/landing.mp4" type="video/mp4" />
       </video>
     </div>
@@ -57,9 +46,6 @@ extra_js: [hero, films]
     </button>
   </section>
 
-  <!-- ============================================================
-   QUOTE / TAGLINE
-   ============================================================ -->
   <section class="quote-section section" aria-label="Quote">
     <div class="container">
       <div class="reveal">
@@ -79,9 +65,6 @@ extra_js: [hero, films]
 
   {% include lightbox.html %}
 
-  <!-- ============================================================
-   GALLERY PREVIEW
-   ============================================================ -->
   <section class="gallery-preview section section--alt" aria-labelledby="gallery-preview-title">
     <div class="container">
       <header class="section-header stagger">
@@ -101,21 +84,17 @@ extra_js: [hero, films]
     </div>
   </section>
 
-  <!-- ============================================================
-   FILMS / VIDEO SLIDESHOW
-   ============================================================ -->
   <section class="section" aria-labelledby="films-preview-title">
     <div class="container">
       <header class="section-header stagger">
         <span class="section-label reveal">Wedding Films</span>
         <h2 class="section-title reveal" id="films-preview-title">Stories <em>in Motion</em></h2>
         <p class="section-subtitle reveal">
-          Relive the magic through cinematic wedding films — from the nervous anticipation to the joyful
-          celebrations that followed.
+          Relive the magic through cinematic wedding films — from the nervous anticipation to the joyful celebrations
+          that followed.
         </p>
       </header>
 
-      <!-- Featured film -->
       <div class="film-featured reveal">
         <div
           class="film-featured__thumb"
@@ -141,78 +120,15 @@ extra_js: [hero, films]
           <span class="film-featured__label">Featured Film</span>
           <h3 class="film-featured__title">Wedding <em>Highlights</em></h3>
           <p class="film-featured__desc">
-            A cinematic journey through the most precious moments of our wedding day — the emotions, the laughter,
-            the music, and the love that filled every corner of our celebration.
+            A cinematic journey through the most precious moments of our wedding day — the emotions, the laughter, the
+            music, and the love that filled every corner of our celebration.
           </p>
         </div>
       </div>
 
-      <!-- Films carousel (mini slideshow) -->
       <div class="films-carousel reveal">
         <div class="films-carousel__viewport">
           <div class="films-carousel__track" id="films-carousel-track">
-            <!-- <div class="films-carousel__slide">
-              <div class="film-card">
-                <div
-                  class="film-card__thumb"
-                  data-youtube-id="dQw4w9WgXcQ"
-                  data-title="Ceremony Film"
-                  role="button"
-                  tabindex="0"
-                  aria-label="Play Ceremony Film"
-                >
-                  <img
-                    src="https://picsum.photos/seed/film2/800/450"
-                    alt="Ceremony film thumbnail"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <div class="film-card__play" aria-hidden="true">
-                    <div class="film-card__play-icon">
-                      <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21" /></svg>
-                    </div>
-                  </div>
-                  <span class="film-card__duration">12:18</span>
-                </div>
-                <div class="film-card__info">
-                  <span class="film-card__tag">Ceremony</span>
-                  <h3 class="film-card__title">The <em>Full Ceremony</em></h3>
-                  <p class="film-card__desc">Every sacred moment of the ceremony, preserved in full.</p>
-                </div>
-              </div>
-            </div> -->
-
-            <!-- <div class="films-carousel__slide">
-              <div class="film-card">
-                <div
-                  class="film-card__thumb"
-                  data-youtube-id="dQw4w9WgXcQ"
-                  data-title="Reception Film"
-                  role="button"
-                  tabindex="0"
-                  aria-label="Play Reception Film"
-                >
-                  <img
-                    src="https://picsum.photos/seed/film3/800/450"
-                    alt="Reception film thumbnail"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <div class="film-card__play" aria-hidden="true">
-                    <div class="film-card__play-icon">
-                      <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21" /></svg>
-                    </div>
-                  </div>
-                  <span class="film-card__duration">8:45</span>
-                </div>
-                <div class="film-card__info">
-                  <span class="film-card__tag">Reception</span>
-                  <h3 class="film-card__title">The <em>Reception</em></h3>
-                  <p class="film-card__desc">Dancing, laughter, and love from our unforgettable reception.</p>
-                </div>
-              </div>
-            </div> -->
-
             <div class="films-carousel__slide">
               <div class="film-card">
                 <div
@@ -286,7 +202,11 @@ extra_js: [hero, films]
             </svg>
           </button>
           <div class="films-carousel__dots" role="list">
-            <button class="films-carousel__dot films-carousel__dot--active" role="listitem" aria-label="Slide 1 of 2"></button>
+            <button
+              class="films-carousel__dot films-carousel__dot--active"
+              role="listitem"
+              aria-label="Slide 1 of 2"
+            ></button>
             <button class="films-carousel__dot" role="listitem" aria-label="Slide 2 of 2"></button>
           </div>
           <button class="films-carousel__btn films-carousel__btn--next" aria-label="Next film">
@@ -297,8 +217,14 @@ extra_js: [hero, films]
         </div>
       </div>
 
-      <!-- Instagram embed modal -->
-      <div id="instagram-modal" class="instagram-modal" role="dialog" aria-modal="true" aria-label="Instagram Reel" hidden>
+      <div
+        id="instagram-modal"
+        class="instagram-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Instagram Reel"
+        hidden
+      >
         <button class="instagram-modal__close" aria-label="Close">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -311,4 +237,3 @@ extra_js: [hero, films]
     </div>
   </section>
 </main>
-<!-- /main-content -->

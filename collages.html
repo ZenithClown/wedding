@@ -11,15 +11,8 @@ extra_js: [gallery]
 gallery_data: gallery_collages
 ---
 
-<!-- PAGE HERO BANNER -->
-{% include page-hero.html
-  aria_label="Group Photos"
-  bg_url="./assets/thumbnails/family.jpg"
-  bg_size="contain"
-  label="Everyone We Love"
-  title_plain="Group"
-  title_em="Photos"
-%}
+{% include page-hero.html aria_label="Group Photos" bg_url="./assets/thumbnails/family.jpg" bg_size="contain"
+label="Everyone We Love" title_plain="Group" title_em="Photos" %}
 
 <main id="main-content">
   <section class="section" aria-labelledby="collages-title">
@@ -33,18 +26,33 @@ gallery_data: gallery_collages
         </p>
       </header>
 
-      <!-- Filter Bar — dropdowns (sections from _data/sections.json; names & locations from gallery.js) -->
+      <!-- Dropdowns: sections from _data/sections.json; names & locations populated by gallery.js -->
       <div class="filter-bar filter-bar--dropdowns" role="group" aria-label="Filter group photos">
         <div class="filter-dropdown" data-filter-type="section">
           <button class="filter-dropdown__trigger" aria-haspopup="listbox" aria-expanded="false">
             <span class="filter-dropdown__label">Section</span>
             <span class="filter-dropdown__value">All</span>
-            <svg class="filter-dropdown__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            <svg
+              class="filter-dropdown__chevron"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
           </button>
           <ul class="filter-dropdown__list" role="listbox" aria-label="Section options">
             <li class="filter-dropdown__option active" data-filter="all" role="option" aria-selected="true">All</li>
             {% for section in site.data.sections.collages %}
-            <li class="filter-dropdown__option" data-filter="{{ section | downcase }}" role="option" aria-selected="false">{{ section | capitalize }}</li>
+            <li
+              class="filter-dropdown__option"
+              data-filter="{{ section | downcase }}"
+              role="option"
+              aria-selected="false"
+            >
+              {{ section | capitalize }}
+            </li>
             {% endfor %}
           </ul>
         </div>
@@ -53,10 +61,18 @@ gallery_data: gallery_collages
           <button class="filter-dropdown__trigger" aria-haspopup="listbox" aria-expanded="false">
             <span class="filter-dropdown__label">By Name</span>
             <span class="filter-dropdown__value">All</span>
-            <svg class="filter-dropdown__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            <svg
+              class="filter-dropdown__chevron"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
           </button>
           <ul class="filter-dropdown__list" role="listbox" aria-label="Name options">
-            <!-- gallery.js injects options -->
+            <!-- gallery.js injects options from image data -->
           </ul>
         </div>
 
@@ -64,20 +80,26 @@ gallery_data: gallery_collages
           <button class="filter-dropdown__trigger" aria-haspopup="listbox" aria-expanded="false">
             <span class="filter-dropdown__label">By Location</span>
             <span class="filter-dropdown__value">All</span>
-            <svg class="filter-dropdown__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            <svg
+              class="filter-dropdown__chevron"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
           </button>
           <ul class="filter-dropdown__list" role="listbox" aria-label="Location options">
-            <!-- gallery.js injects options -->
+            <!-- gallery.js injects options from image data -->
           </ul>
         </div>
 
         <span class="filter-bar__count" aria-live="polite">Loading…</span>
       </div>
 
-      <!-- Gallery Grid (populated by gallery.js using GALLERY_OVERRIDE) -->
       <div class="gallery-grid" role="list" aria-label="Group photo gallery"></div>
 
-      <!-- Infinite scroll sentinel -->
       <div class="load-more-trigger" aria-label="Loading more photos"></div>
     </div>
   </section>

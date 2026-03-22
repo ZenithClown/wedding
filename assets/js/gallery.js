@@ -1,18 +1,10 @@
-/* ============================================================
-   GALLERY — Infinite scroll, lightbox, category filter
-   ============================================================ */
-
 (function () {
   "use strict";
 
-  // ---- Configuration ----------------------------------------
   const BATCH_SIZE = 9;
-  const GRID_SELECTOR = ".gallery-grid";
-  const SENTINEL_SEL = ".load-more-trigger";
 
-  // ---- Image data (replace src with real images before deploy)
+  // Replace src/thumb with real image paths before deploy.
   // Each object: { src, thumb, alt, category, caption }
-  // Uses Picsum for placeholders; unique seeds ensure variety.
   const IMAGE_DATA = [
     {
       src: "https://picsum.photos/seed/wed1/1200/800",
@@ -226,28 +218,20 @@
     },
   ];
 
-  // ---- State -----------------------------------------------
-  // Allow page-specific override (e.g. couple-shoot.html injects window.GALLERY_OVERRIDE)
   const SOURCE_DATA = window.GALLERY_OVERRIDE && window.GALLERY_OVERRIDE.length ? window.GALLERY_OVERRIDE : IMAGE_DATA;
 
-  let allImages = [...SOURCE_DATA];
   let filteredImages = [...SOURCE_DATA];
   let loadedCount = 0;
   let isLoading = false;
   let activeCategory = "all";
 
-  // ---- DOM refs -------------------------------------------
-  const grid = document.querySelector(GRID_SELECTOR);
-  const sentinel = document.querySelector(SENTINEL_SEL);
+  const grid = document.querySelector(".gallery-grid");
+  const sentinel = document.querySelector(".load-more-trigger");
   const filterBtns = document.querySelectorAll(".filter-bar__btn");
   const countEl = document.querySelector(".filter-bar__count");
 
-  if (!grid) return; // not a gallery page
+  if (!grid) return;
 
-  // ---- Size-based masonry for all gallery pages -----------
-  grid.classList.add("gallery-grid--masonry");
-
-  // ---- Build gallery item HTML ----------------------------
   function buildItem(img, index) {
     const item = document.createElement("div");
     item.className = "gallery-grid__item";
@@ -257,23 +241,8 @@
     item.setAttribute("tabindex", "0");
     item.setAttribute("aria-label", `View photo: ${img.alt}`);
 
-    // Span portrait images across 2 rows based on actual dimensions
-    const match = img.thumb.match(/\/(\d+)\/(\d+)(?:\?.*)?$/);
-    if (match) {
-      const ratio = parseInt(match[1]) / parseInt(match[2]);
-      if (ratio < 0.85) {
-        item.classList.add("tall");
-        item.style.gridRow = "span 2";
-      }
-    }
-
     item.innerHTML = `
-      <img
-        src="${img.thumb}"
-        alt="${img.alt}"
-        loading="lazy"
-        decoding="async"
-      >
+      <img src="${img.thumb}" alt="${img.alt}" loading="lazy" decoding="async">
       <div class="gallery-grid__caption">
         <span class="gallery-grid__caption-text">${img.caption || ""}</span>
       </div>
@@ -293,83 +262,64 @@
     return item;
   }
 
-  // ---- Load next batch ------------------------------------
   function loadBatch() {
     if (isLoading) return;
     const remaining = filteredImages.length - loadedCount;
     if (remaining <= 0) {
-      sentinel && (sentinel.style.display = "none");
+      if (sentinel) sentinel.style.display = "none";
       return;
     }
 
     isLoading = true;
-    sentinel && (sentinel.innerHTML = '<div class="spinner"></div>');
+    if (sentinel) sentinel.innerHTML = '<div class="spinner"></div>';
 
-    // Simulate async (replace with real fetch if needed)
     requestAnimationFrame(() => {
       const batch = filteredImages.slice(loadedCount, loadedCount + BATCH_SIZE);
 
       batch.forEach((img, i) => {
         const el = buildItem(img, loadedCount + i);
-        // Stagger entrance animation
-        el.style.opacity = "0";
-        el.style.transform = "translateY(16px)";
-        el.style.transition = `opacity 0.5s ease ${i * 60}ms, transform 0.5s ease ${i * 60}ms`;
+        el.style.cssText = `opacity:0;transform:translateY(16px);transition:opacity 0.5s ease ${i * 60}ms,transform 0.5s ease ${i * 60}ms`;
         grid.appendChild(el);
-
-        requestAnimationFrame(() => {
+        // Double rAF forces a style recalc before the transition begins
+        requestAnimationFrame(() =>
           requestAnimationFrame(() => {
             el.style.opacity = "1";
             el.style.transform = "translateY(0)";
-          });
-        });
+          })
+        );
       });
 
       loadedCount += batch.length;
       isLoading = false;
 
-      updateCount();
+      if (countEl) countEl.textContent = `${loadedCount} / ${filteredImages.length} photos`;
 
       if (loadedCount >= filteredImages.length) {
-        sentinel && (sentinel.style.display = "none");
+        if (sentinel) sentinel.style.display = "none";
       } else {
-        sentinel && (sentinel.innerHTML = "");
+        if (sentinel) sentinel.innerHTML = "";
       }
     });
   }
 
-  // ---- Update visible count --------------------------------
-  function updateCount() {
-    if (countEl) {
-      countEl.textContent = `${loadedCount} / ${filteredImages.length} photos`;
-    }
-  }
-
-  // ---- IntersectionObserver for infinite scroll -----------
   if (sentinel) {
-    const io = new IntersectionObserver(
+    new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) loadBatch();
       },
       { rootMargin: "200px" }
-    );
-
-    io.observe(sentinel);
+    ).observe(sentinel);
   }
 
-  // ---- Category filter ------------------------------------
-  // Collages mode: multi-dimensional AND filter via dropdowns (section + name + location)
-  // Standard mode: single-category filter (gallery.html)
   const namesDropdown = document.querySelector(".filter-dropdown--names");
   const locationsDropdown = document.querySelector(".filter-dropdown--locations");
 
   if (namesDropdown && locationsDropdown) {
-    // COLLAGES MODE — section: single-select | name & location: multi-select
+    // COLLAGES MODE: section single-select | name & location multi-select
     let activeSection = "all";
-    let activeNames = new Set(); // empty = all names
-    let activeLocations = new Set(); // empty = all locations
+    let activeNames = new Set();
+    let activeLocations = new Set();
 
-    // Extract unique names and locations from data
     const allNames = [...new Set(SOURCE_DATA.flatMap((img) => img.names || []))].sort();
     const allLocations = [...new Set(SOURCE_DATA.map((img) => img.location).filter(Boolean))].sort();
 
@@ -383,7 +333,6 @@
       return li;
     }
 
-    // Populate names list
     const namesList = namesDropdown.querySelector(".filter-dropdown__list");
     if (allNames.length && namesList) {
       namesList.appendChild(makeOption("All", "all"));
@@ -392,7 +341,6 @@
       namesDropdown.style.display = "none";
     }
 
-    // Populate locations list
     const locationsList = locationsDropdown.querySelector(".filter-dropdown__list");
     if (allLocations.length && locationsList) {
       locationsList.appendChild(makeOption("All", "all"));
@@ -401,7 +349,6 @@
       locationsDropdown.style.display = "none";
     }
 
-    // Open / close dropdown
     function closeAll() {
       document.querySelectorAll(".filter-dropdown.open").forEach((d) => {
         d.classList.remove("open");
@@ -430,18 +377,19 @@
     function applyFilter() {
       grid.innerHTML = "";
       loadedCount = 0;
-      filteredImages = allImages.filter((img) => {
+      filteredImages = SOURCE_DATA.filter((img) => {
         const sectionOk = activeSection === "all" || img.category === activeSection;
         const nameOk = activeNames.size === 0 || (img.names && img.names.some((n) => activeNames.has(n)));
         const locationOk = activeLocations.size === 0 || activeLocations.has(img.location);
         return sectionOk && nameOk && locationOk;
       });
-      sentinel && (sentinel.style.display = "");
-      sentinel && (sentinel.innerHTML = "");
+      if (sentinel) {
+        sentinel.style.display = "";
+        sentinel.innerHTML = "";
+      }
       loadBatch();
     }
 
-    // Sync a multi-select dropdown's option states and trigger label
     function syncMulti(dropdown, activeSet) {
       const isAll = activeSet.size === 0;
       dropdown.querySelectorAll(".filter-dropdown__option").forEach((opt) => {
@@ -458,7 +406,6 @@
       dropdown.querySelector(".filter-dropdown__trigger").classList.toggle("active", !isAll);
     }
 
-    // Handle option clicks for all three dropdowns
     document.querySelectorAll(".filter-dropdown").forEach((dropdown) => {
       const type = dropdown.dataset.filterType;
       dropdown.addEventListener("click", (e) => {
@@ -467,7 +414,6 @@
         const val = option.dataset.filter;
 
         if (type === "section") {
-          // Single-select: update state, sync UI, close
           activeSection = val;
           dropdown.querySelectorAll(".filter-dropdown__option").forEach((opt) => {
             const sel = opt.dataset.filter === val;
@@ -479,7 +425,7 @@
           dropdown.querySelector(".filter-dropdown__trigger").classList.toggle("active", val !== "all");
           closeAll();
         } else {
-          // Multi-select: toggle, stay open
+          // Multi-select: toggle value, stay open
           const activeSet = type === "name" ? activeNames : activeLocations;
           if (val === "all") {
             activeSet.clear();
@@ -493,7 +439,6 @@
       });
     });
   } else {
-    // STANDARD MODE (gallery.html): single-category filter
     filterBtns.forEach((btn) => {
       btn.addEventListener("click", () => {
         const cat = btn.dataset.filter;
@@ -503,26 +448,23 @@
         filterBtns.forEach((b) => b.classList.remove("active"));
         btn.classList.add("active");
 
-        // Reset
         grid.innerHTML = "";
         loadedCount = 0;
+        filteredImages = cat === "all" ? [...SOURCE_DATA] : SOURCE_DATA.filter((img) => img.category === cat);
 
-        filteredImages = cat === "all" ? [...allImages] : allImages.filter((img) => img.category === cat);
-
-        sentinel && (sentinel.style.display = "");
-        sentinel && (sentinel.innerHTML = "");
+        if (sentinel) {
+          sentinel.style.display = "";
+          sentinel.innerHTML = "";
+        }
 
         loadBatch();
       });
     });
   }
 
-  // ---- Initial load ----------------------------------------
   loadBatch();
 
-  // ================================================================
-  // LIGHTBOX
-  // ================================================================
+  // Lightbox
   const lightbox = document.querySelector(".lightbox");
   const lbImg = lightbox && lightbox.querySelector(".lightbox__img");
   const lbClose = lightbox && lightbox.querySelector(".lightbox__close");
@@ -552,7 +494,6 @@
   function showImage(index) {
     const img = filteredImages[index];
     if (!img || !lbImg) return;
-
     lbImg.src = img.src;
     lbImg.alt = img.alt;
     if (lbCounter) lbCounter.textContent = `${index + 1} / ${filteredImages.length}`;
@@ -561,13 +502,11 @@
   }
 
   function goPrev() {
-    const newIdx = (currentIndex - 1 + filteredImages.length) % filteredImages.length;
-    showImage(newIdx);
+    showImage((currentIndex - 1 + filteredImages.length) % filteredImages.length);
   }
 
   function goNext() {
-    const newIdx = (currentIndex + 1) % filteredImages.length;
-    showImage(newIdx);
+    showImage((currentIndex + 1) % filteredImages.length);
   }
 
   lbClose && lbClose.addEventListener("click", closeLightbox);
@@ -582,9 +521,8 @@
     if (e.key === "ArrowRight") goNext();
   });
 
-  // Touch swipe support for lightbox
-  let touchStartX = 0;
-  lightbox &&
+  if (lightbox) {
+    let touchStartX = 0;
     lightbox.addEventListener(
       "touchstart",
       (e) => {
@@ -592,7 +530,6 @@
       },
       { passive: true }
     );
-  lightbox &&
     lightbox.addEventListener(
       "touchend",
       (e) => {
@@ -601,4 +538,5 @@
       },
       { passive: true }
     );
+  }
 })();

@@ -4,26 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- SEO -->
     <title>{{ page.title }}</title>
     <meta name="description" content="{{ page.description }}" />
     <meta name="robots" content="{{ page.robots | default: 'index, follow' }}" />
     {% if page.canonical %}<link rel="canonical" href="{{ page.canonical }}" />{% endif %}
 
-    <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="{{ page.og_title | default: page.title }}" />
     <meta property="og:description" content="{{ page.og_description | default: page.description }}" />
     <meta property="og:image" content="./assets/images/og-image.jpg" />
     {% if page.canonical %}<meta property="og:url" content="{{ page.canonical }}" />{% endif %}
 
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="{{ page.og_title | default: page.title }}" />
     <meta name="twitter:description" content="{{ page.og_description | default: page.description }}" />
     <meta name="twitter:image" content="./assets/images/og-image.jpg" />
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -31,19 +27,17 @@
       rel="stylesheet"
     />
 
-    <!-- Base styles: variables → reset → base → animations → navbar -->
+    <!-- CSS load order: variables → reset → base → animations → navbar → [extra_css] → footer -->
     <link rel="stylesheet" href="./assets/css/variables.css" />
     <link rel="stylesheet" href="./assets/css/reset.css" />
     <link rel="stylesheet" href="./assets/css/base.css" />
     <link rel="stylesheet" href="./assets/css/animations.css" />
     <link rel="stylesheet" href="./assets/css/navbar.css" />
-    <!-- Page-specific CSS (hero, gallery — inserted before footer.css) -->
     {% for css in page.extra_css %}
     <link rel="stylesheet" href="./assets/css/{{ css }}.css" />
     {% endfor %}
     <link rel="stylesheet" href="./assets/css/footer.css" />
 
-    <!-- Favicon -->
     <link
       rel="icon"
       type="image/svg+xml"
@@ -121,13 +115,6 @@
       }
     </style>
     {% endif %}
-
-    <!-- Couple-shoot mode flag (prewedding.html only) -->
-    {% if page.couple_shoot_mode %}
-    <script>
-      window.COUPLE_SHOOT_MODE = true;
-    </script>
-    {% endif %}
   </head>
   <body>
     {% include navbar.html %}
@@ -142,14 +129,13 @@
     {% include scroll-top.html %}
     {% endunless %}
 
-    <!-- Gallery data injection — runs before deferred gallery.js -->
+    <!-- GALLERY_OVERRIDE must be set before gallery.js is deferred-parsed -->
     {% if page.gallery_data %}
     <script>
       window.GALLERY_OVERRIDE = {{ site.data[page.gallery_data] | jsonify }};
     </script>
     {% endif %}
 
-    <!-- Scripts -->
     <script src="./assets/js/navbar.js" defer></script>
     {% for js in page.extra_js %}
     <script src="./assets/js/{{ js }}.js" defer></script>

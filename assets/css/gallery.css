@@ -197,18 +197,8 @@
 
 /* --- Gallery Grid --- */
 .gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 6px;
-}
-
-/* Masonry layout — driven by image aspect ratio */
-.gallery-grid--masonry {
-  grid-auto-rows: 280px;
-}
-
-.gallery-grid--masonry .gallery-grid__item {
-  aspect-ratio: unset;
+  columns: 3;
+  column-gap: 6px;
 }
 
 .gallery-grid__item {
@@ -216,18 +206,14 @@
   overflow: hidden;
   cursor: pointer;
   background: var(--color-surface);
-  aspect-ratio: 3/2;
-}
-
-.gallery-grid__item.tall {
-  aspect-ratio: unset;
+  break-inside: avoid;
+  margin-bottom: 6px;
+  width: 100%;
 }
 
 .gallery-grid__item img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
+  height: auto;
   display: block;
   transition:
     transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
@@ -494,24 +480,16 @@
 }
 
 .gallery-preview__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 6px;
+  columns: 3;
+  column-gap: 6px;
   margin-bottom: var(--space-12);
-}
-
-.gallery-preview__grid {
-  grid-auto-rows: 280px;
-}
-
-.gallery-preview__grid .gallery-grid__item {
-  aspect-ratio: unset;
 }
 
 /* --- Responsive --- */
 @media (max-width: 1024px) {
-  .gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .gallery-grid,
+  .gallery-preview__grid {
+    columns: 2;
   }
 
   .lightbox__nav--prev {
@@ -524,12 +502,11 @@
 
 @media (max-width: 768px) {
   .gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 4px;
+    column-gap: 4px;
   }
 
-  .gallery-grid--masonry {
-    grid-auto-rows: 220px;
+  .gallery-grid__item {
+    margin-bottom: 4px;
   }
 
   .filter-bar {
@@ -547,18 +524,11 @@
     right: var(--space-4);
     position: fixed;
   }
-
-  .gallery-preview__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
 @media (max-width: 480px) {
-  .gallery-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .gallery-grid--masonry .gallery-grid__item {
-    grid-row: unset !important;
+  .gallery-grid,
+  .gallery-preview__grid {
+    columns: 1;
   }
 }

@@ -34,7 +34,7 @@ _data/
 |---|---|---|
 | `index.html` | `home` | video hero, gallery preview, films carousel, pre-wedding preview |
 | `gallery.html` | `gallery` | infinite scroll, lightbox, category filter |
-| `prewedding.html` | `prewedding` | GALLERY_OVERRIDE, no filter bar, couple_shoot_mode |
+| `prewedding.html` | `prewedding` | GALLERY_OVERRIDE, no filter bar |
 | `collages.html` | `collages` | GALLERY_OVERRIDE, filter: All/Family/Friends/Bridal Party |
 | `404.html` | — | navbar_scrolled, no_footer, no_scroll_top, error_page |
 
@@ -49,7 +49,6 @@ _data/
 | `nav_active` | Active mobile-drawer link: `home`, `gallery`, `prewedding`, `collages` |
 | `extra_css` / `extra_js` | Page-specific files (loaded between navbar and footer) |
 | `gallery_data` | `_data/` key for GALLERY_OVERRIDE (e.g. `gallery_prewedding`) |
-| `couple_shoot_mode` | Sets `window.COUPLE_SHOOT_MODE = true` (prewedding.html) |
 | `navbar_scrolled` / `no_footer` / `no_scroll_top` / `error_page` | 404.html only |
 
 ### Including page-hero
