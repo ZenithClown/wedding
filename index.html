@@ -76,7 +76,7 @@ extra_js: [hero, films]
         </p>
       </header>
 
-      <div class="gallery-preview__grid stagger"></div>
+      <div class="gallery-preview__grid"></div>
 
       <div class="text-center mt-12 reveal">
         <a href="./gallery.html" class="btn btn--outline">See All Photos</a>
@@ -237,3 +237,7 @@ extra_js: [hero, films]
     </div>
   </section>
 </main>
+
+<script>
+  window.LANDING_PREVIEW = {{ site.data.landing | jsonify }};
+</script>
