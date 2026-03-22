@@ -7,7 +7,7 @@ og_title: "Debmalya & Ankita — A Wedding Story"
 og_description: "A celebration of love, beautifully captured."
 nav_active: home
 extra_css: [hero, gallery, films]
-extra_js: [hero, films]
+extra_js: [hero, films, drive-gallery]
 ---
 
 <!-- ============================================================
@@ -77,6 +77,8 @@ extra_js: [hero, films]
     </div>
   </section>
 
+  {% include lightbox.html %}
+
   <!-- ============================================================
    GALLERY PREVIEW
    ============================================================ -->
@@ -91,150 +93,7 @@ extra_js: [hero, films]
         </p>
       </header>
 
-      <div class="gallery-preview__grid stagger">
-        <!-- 6 preview images — categories match gallery page filters -->
-        <div
-          class="gallery-grid__item reveal"
-          data-category="ceremony"
-          tabindex="0"
-          role="button"
-          aria-label="View ceremony photo"
-        >
-          <img
-            src="https://picsum.photos/seed/prev1/800/600"
-            alt="Wedding ceremony moment"
-            loading="lazy"
-            decoding="async"
-          />
-          <div class="gallery-grid__caption"><span class="gallery-grid__caption-text">The Vows</span></div>
-          <div class="gallery-grid__expand" aria-hidden="true">
-            <svg viewBox="0 0 24 24">
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M4 8V4m0 0h4M4 4l5 5m11-5h-4m4 0v4m0-4l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"
-              />
-            </svg>
-          </div>
-        </div>
-        <div
-          class="gallery-grid__item tall reveal"
-          data-category="portraits"
-          tabindex="0"
-          role="button"
-          aria-label="View portrait"
-          style="grid-row: span 2"
-        >
-          <img
-            src="https://picsum.photos/seed/prev2/600/800"
-            alt="Couple portrait"
-            loading="lazy"
-            decoding="async"
-          />
-          <div class="gallery-grid__caption"><span class="gallery-grid__caption-text">Golden Hour</span></div>
-          <div class="gallery-grid__expand" aria-hidden="true">
-            <svg viewBox="0 0 24 24">
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M4 8V4m0 0h4M4 4l5 5m11-5h-4m4 0v4m0-4l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"
-              />
-            </svg>
-          </div>
-        </div>
-        <div
-          class="gallery-grid__item reveal"
-          data-category="reception"
-          tabindex="0"
-          role="button"
-          aria-label="View reception photo"
-        >
-          <img
-            src="https://picsum.photos/seed/prev3/800/600"
-            alt="Wedding reception"
-            loading="lazy"
-            decoding="async"
-          />
-          <div class="gallery-grid__caption"><span class="gallery-grid__caption-text">First Dance</span></div>
-          <div class="gallery-grid__expand" aria-hidden="true">
-            <svg viewBox="0 0 24 24">
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M4 8V4m0 0h4M4 4l5 5m11-5h-4m4 0v4m0-4l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"
-              />
-            </svg>
-          </div>
-        </div>
-        <div
-          class="gallery-grid__item reveal"
-          data-category="details"
-          tabindex="0"
-          role="button"
-          aria-label="View details photo"
-        >
-          <img
-            src="https://picsum.photos/seed/prev4/800/600"
-            alt="Wedding details"
-            loading="lazy"
-            decoding="async"
-          />
-          <div class="gallery-grid__caption"><span class="gallery-grid__caption-text">Every Detail</span></div>
-          <div class="gallery-grid__expand" aria-hidden="true">
-            <svg viewBox="0 0 24 24">
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M4 8V4m0 0h4M4 4l5 5m11-5h-4m4 0v4m0-4l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"
-              />
-            </svg>
-          </div>
-        </div>
-        <div
-          class="gallery-grid__item reveal"
-          data-category="candid"
-          tabindex="0"
-          role="button"
-          aria-label="View candid photo"
-        >
-          <img src="https://picsum.photos/seed/prev5/800/600" alt="Candid moment" loading="lazy" decoding="async" />
-          <div class="gallery-grid__caption"><span class="gallery-grid__caption-text">Pure Joy</span></div>
-          <div class="gallery-grid__expand" aria-hidden="true">
-            <svg viewBox="0 0 24 24">
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M4 8V4m0 0h4M4 4l5 5m11-5h-4m4 0v4m0-4l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"
-              />
-            </svg>
-          </div>
-        </div>
-        <div
-          class="gallery-grid__item tall reveal"
-          data-category="portraits"
-          tabindex="0"
-          role="button"
-          aria-label="View portrait"
-          style="grid-row: span 2"
-        >
-          <img
-            src="https://picsum.photos/seed/prev6/600/800"
-            alt="Romantic portrait"
-            loading="lazy"
-            decoding="async"
-          />
-          <div class="gallery-grid__caption"><span class="gallery-grid__caption-text">Together</span></div>
-          <div class="gallery-grid__expand" aria-hidden="true">
-            <svg viewBox="0 0 24 24">
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M4 8V4m0 0h4M4 4l5 5m11-5h-4m4 0v4m0-4l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"
-              />
-            </svg>
-          </div>
-        </div>
-      </div>
+      <div id="drive-gallery-grid" class="gallery-preview__grid stagger"></div>
 
       <div class="text-center mt-12 reveal">
         <a href="./gallery.html" class="btn btn--outline">See All Photos</a>

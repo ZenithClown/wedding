@@ -6,7 +6,8 @@
       "Bash(cd \"e:/Personal Projects/website\" && git log*)",
       "Bash(cd \"e:/Personal Projects/website\" && git add*)",
       "Bash(cd \"e:/Personal Projects/website\" && git diff*)",
-      "Bash(cd \"e:/Personal Projects/website\" && git commit*)"
+      "Bash(cd \"e:/Personal Projects/website\" && git commit*)",
+      "WebFetch(domain:drive.google.com)"
     ]
   }
 }

@@ -508,6 +508,22 @@
   aspect-ratio: unset;
 }
 
+/* --- Drive gallery loading / error states --- */
+.drive-gallery__loading,
+.drive-gallery__msg {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 280px;
+  color: var(--color-text-muted);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  letter-spacing: var(--tracking-wide);
+  text-align: center;
+  padding: var(--space-8);
+}
+
 /* --- Responsive --- */
 @media (max-width: 1024px) {
   .gallery-grid {
