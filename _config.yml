@@ -4,10 +4,6 @@ description: "Personal wedding memory site for Debmalya Pramanik and Ankita Sant
 url: ""
 baseurl: ""
 
-# API keys — injected at build time from GitHub Secrets via deploy.yml.
-# Leave empty here; never commit a real key to this file.
-GOOGLE_DRIVE_API_KEY: ""
-
 # Build settings
 exclude:
   - Gemfile
