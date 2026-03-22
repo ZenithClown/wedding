@@ -37,6 +37,7 @@
     <link rel="stylesheet" href="./assets/css/{{ css }}.css" />
     {% endfor %}
     <link rel="stylesheet" href="./assets/css/footer.css" />
+    <link rel="stylesheet" href="./assets/css/cursor.css" />
 
     <link
       rel="icon"
@@ -117,6 +118,9 @@
     {% endif %}
   </head>
   <body>
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
     {% include navbar.html %}
 
     {{ content }}
@@ -136,6 +140,7 @@
     </script>
     {% endif %}
 
+    <script src="./assets/js/cursor.js" defer></script>
     <script src="./assets/js/navbar.js" defer></script>
     {% for js in page.extra_js %}
     <script src="./assets/js/{{ js }}.js" defer></script>
