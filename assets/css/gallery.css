@@ -500,8 +500,12 @@
   margin-bottom: var(--space-12);
 }
 
+.gallery-preview__grid {
+  grid-auto-rows: 280px;
+}
+
 .gallery-preview__grid .gallery-grid__item {
-  aspect-ratio: 4/3;
+  aspect-ratio: unset;
 }
 
 /* --- Responsive --- */
