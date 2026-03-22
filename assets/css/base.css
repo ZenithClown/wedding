@@ -279,6 +279,16 @@ body.lightbox-open {
   line-height: var(--leading-tight);
 }
 
+.page-hero--left .page-hero__label,
+.page-hero--left .page-hero__title {
+  text-align: left;
+}
+
+.page-hero--right .page-hero__label,
+.page-hero--right .page-hero__title {
+  text-align: right;
+}
+
 /* --- Utilities --- */
 .sr-only {
   position: absolute;

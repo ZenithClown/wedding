@@ -1,4 +1,4 @@
-<div class="page-hero" role="banner" aria-label="{{ include.aria_label }}">
+<div class="page-hero{% if include.align %} page-hero--{{ include.align }}{% endif %}" role="banner" aria-label="{{ include.aria_label }}">
   <div
     class="page-hero__bg"
     style="background-image: url(&quot;{{ include.bg_url }}&quot;)"
